@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+:root {
+  --color-paper: #faf9f7;
+  --color-ink: #0a0a0a;
+  --color-ink-soft: #3f3f46;
+  --color-ink-faint: #66666b;
+  --color-line: #dcdad5;
+  --color-accent: #2f5ef2;
+  --color-panel: #f0efeb;
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "Newsreader", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --ease-signature: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-ink-faint: var(--color-ink-faint);
+  --color-line: var(--color-line);
+  --color-accent: var(--color-accent);
+  --color-panel: var(--color-panel);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.field-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hairline {
+  border-color: var(--color-line);
+}
+
+.text-balance-pretty {
+  text-wrap: pretty;
+}
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+.dot-grid {
+  background-image: radial-gradient(circle, var(--color-ink) 1px, transparent 1px);
+  background-size: 22px 22px;
+  opacity: 0.06;
+}
+
+.ghost-numeral {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--color-ink);
+  opacity: 0.05;
+  user-select: none;
+  line-height: 1;
+}
