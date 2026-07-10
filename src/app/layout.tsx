@@ -32,6 +32,7 @@ const description =
   "Aliza Habib is a senior product designer and communications lead shaping systems, services, and speculative futures across fintech, climate finance, and healthcare.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://aliza.design"),
   title,
   description,
   openGraph: {
