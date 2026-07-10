@@ -27,7 +27,7 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
-const title = "Aliza Habib — Senior Product Designer & Communications Lead";
+const title = "Aliza Habib · Senior Product Designer & Communications Lead";
 const description =
   "Aliza Habib is a senior product designer and communications lead shaping systems, services, and speculative futures across fintech, climate finance, and healthcare.";
 

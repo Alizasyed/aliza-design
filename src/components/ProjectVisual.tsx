@@ -43,7 +43,7 @@ export function ProjectVisual({
 
       {!vivid && (
         <>
-          {/* signature-colour duotone wash — lifts on hover to reveal the full-colour photo */}
+          {/* signature-colour duotone wash: lifts on hover to reveal the full-colour photo */}
           <div className="absolute inset-0 bg-[color:var(--proj)] opacity-60 mix-blend-multiply transition-opacity duration-500 group-hover/vis:opacity-0" />
           {/* subtle lift so shadows don't crush to black under the wash */}
           <div className="absolute inset-0 bg-paper/10 mix-blend-overlay transition-opacity duration-500 group-hover/vis:opacity-0" />

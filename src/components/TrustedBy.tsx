@@ -97,7 +97,7 @@ export function TrustedBy() {
         })}
       </div>
 
-      {/* cursor-following preview — a fan of every project done with this client */}
+      {/* cursor-following preview: a fan of every project done with this client */}
       <AnimatePresence>
         {client && projects.length > 0 && !reduce && (
           <motion.div

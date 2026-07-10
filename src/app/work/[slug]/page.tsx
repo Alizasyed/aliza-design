@@ -21,7 +21,7 @@ export async function generateMetadata({
   const project = caseStudies.find((p) => p.slug === slug);
   if (!project) return {};
   return {
-    title: `${project.title} — Aliza Habib`,
+    title: `${project.title} · Aliza Habib`,
     description: project.tagline,
   };
 }

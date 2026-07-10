@@ -1,4 +1,4 @@
-// Bold, single-colour brand marks per project — meant to sit as an overlay on
+// Bold, single-colour brand marks per project: meant to sit as an overlay on
 // top of a real photo. Linework uses currentColor (set by the parent, usually
 // paper); the focal node is a fixed accent "pulse" that carries the colour.
 

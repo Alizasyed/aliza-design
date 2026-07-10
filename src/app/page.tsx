@@ -22,7 +22,7 @@ export default function Home() {
           <p className="field-label text-paper/60">{profile.title}</p>
           <p className="mt-4 max-w-md font-body text-base text-paper/75 leading-relaxed sm:text-lg">
             Shaping systems, services, and{" "}
-            <span className="italic text-paper">speculative futures</span> — for the people
+            <span className="italic text-paper">speculative futures</span>, for the people
             existing systems tend to leave out.
           </p>
         </Reveal>
@@ -100,7 +100,7 @@ export default function Home() {
           <Reveal>
             <h2 className="field-label text-ink-faint mb-6">Philosophy</h2>
             <p className="font-display text-2xl sm:text-3xl leading-snug text-balance-pretty">
-              Design that treats comprehension, trust, and access as constraints —
+              Design that treats comprehension, trust, and access as constraints,
               not features to add later.
             </p>
           </Reveal>

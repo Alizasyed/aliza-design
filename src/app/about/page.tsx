@@ -5,7 +5,7 @@ import { profile } from "@/lib/data";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About — Aliza Habib",
+  title: "About · Aliza Habib",
   description: profile.bio,
 };
 
@@ -23,7 +23,7 @@ const timeline = [
   {
     tag: "2022–24",
     title: "M.P.S., Interactive Telecommunications Program",
-    detail: "New York University, as a Fulbright Scholar — thesis: What She Carried.",
+    detail: "New York University, as a Fulbright Scholar, thesis: What She Carried.",
   },
   {
     tag: "Earlier",
