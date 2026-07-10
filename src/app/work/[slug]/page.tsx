@@ -114,7 +114,7 @@ export default async function CaseStudyPage({
         </div>
       </Reveal>
 
-      <div className="mx-auto max-w-3xl px-5 sm:px-8 py-20 sm:py-28 space-y-16 [&:has(.persona-grid)]:max-w-4xl [&:has(.media-full)]:max-w-5xl [&:has(.media-wide)]:max-w-5xl">
+      <div className="mx-auto max-w-3xl px-5 sm:px-8 py-20 sm:py-28 space-y-16 [&:has(.persona-grid)]:max-w-4xl [&:has(.media-full)]:max-w-5xl [&:has(.media-wide)]:max-w-5xl [&:has(.section-split)]:max-w-5xl">
         {project.nda ? (
           <Reveal>
             <p className="field-label text-ink-faint mb-4">Note</p>
@@ -163,7 +163,55 @@ export default async function CaseStudyPage({
               </ol>
             </Reveal>
 
-            {project.sections?.map((section) => (
+            {project.sections?.map((section) =>
+              section.media?.sideBySide ? (
+                <Reveal key={section.heading}>
+                  <div className="section-split grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                    <div>
+                      <p className="field-label text-ink-faint mb-4">{section.heading}</p>
+                      {section.body && (
+                        <p className="font-body text-lg text-ink-soft leading-relaxed">
+                          {section.body}
+                        </p>
+                      )}
+                      {section.items && (
+                        <ul className="mt-5 space-y-3">
+                          {section.items.map((item, i) => (
+                            <li key={i} className="flex gap-4">
+                              <span
+                                aria-hidden
+                                className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--proj)]"
+                              />
+                              <p className="font-body text-lg text-ink-soft leading-relaxed">
+                                {item}
+                              </p>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                    <figure>
+                      <div className="overflow-hidden border hairline bg-panel">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={section.media.images[0].src}
+                          alt={section.media.images[0].alt}
+                          width={section.media.images[0].w}
+                          height={section.media.images[0].h}
+                          loading="lazy"
+                          decoding="async"
+                          className="h-auto w-full"
+                        />
+                      </div>
+                      {section.media.caption && (
+                        <figcaption className="mt-3 font-body text-sm text-ink-faint leading-relaxed">
+                          {section.media.caption}
+                        </figcaption>
+                      )}
+                    </figure>
+                  </div>
+                </Reveal>
+              ) : (
               <Reveal key={section.heading}>
                 <p className="field-label text-ink-faint mb-4">{section.heading}</p>
                 {section.body && (
@@ -330,7 +378,8 @@ export default async function CaseStudyPage({
                   </figure>
                 )}
               </Reveal>
-            ))}
+              )
+            )}
 
             <Reveal>
               <p className="field-label text-ink-faint mb-4">Outcome</p>

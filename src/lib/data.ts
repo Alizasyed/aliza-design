@@ -36,6 +36,8 @@ export type CaseStudy = {
       }[];
       /** Fit each image uncropped within its frame instead of cropping to a shared ratio — for designed graphics (posters, screenshots) where cropping would cut off content. */
       contain?: boolean;
+      /** Render the heading/body/items in one column and the image in an adjacent column, instead of stacking the image full-width below the text — keeps tall single screenshots from eating a whole scroll with little text visible alongside. */
+      sideBySide?: boolean;
       caption?: string;
     };
     /** Renders a row of persona cards (portrait + quote + pains/gains) instead of items/media. */
@@ -385,9 +387,9 @@ export const caseStudies: CaseStudy[] = [
               alt: "Executive Outlook screen with an interactive capacity-vs-demand forecast chart.",
               w: 1019,
               h: 1400,
-              full: true,
             },
           ],
+          sideBySide: true,
           caption: "Executive outlook · a single forecast leads, with the projection marked along the line.",
         },
       },
@@ -406,9 +408,9 @@ export const caseStudies: CaseStudy[] = [
               alt: "Access & Wait Times screen comparing waiting times across population groups, with a colour-coded severity column.",
               w: 1208,
               h: 1400,
-              full: true,
             },
           ],
+          sideBySide: true,
           caption: "Access & wait times · severity reads as colour, and the table sorts itself into a triage order.",
         },
       },
@@ -427,9 +429,9 @@ export const caseStudies: CaseStudy[] = [
               alt: "Report Library screen showing saved report templates that refresh automatically, with filters on the left.",
               w: 1400,
               h: 1179,
-              full: true,
             },
           ],
+          sideBySide: true,
           caption: "Report library · saved reports refresh on a schedule, and that state stays visible.",
         },
       },
@@ -447,9 +449,9 @@ export const caseStudies: CaseStudy[] = [
               alt: "Data Quality Hub screen for reviewing and resolving mismatches in provider data, with pass/fail validation badges.",
               w: 1138,
               h: 1400,
-              full: true,
             },
           ],
+          sideBySide: true,
           caption: "Data quality hub · dense validation data, resolved at a glance through pass/fail badges.",
         },
       },
