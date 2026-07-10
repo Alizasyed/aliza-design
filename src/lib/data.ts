@@ -24,6 +24,20 @@ export type CaseStudy = {
     heading: string;
     body?: string;
     items?: string[];
+    /**
+     * Numbered callouts tying a specific point on the screenshot to an
+     * explanation and the design-pattern/heuristic it follows — renders as
+     * numbered pins on the image (positioned by x/y percent) matched to a
+     * numbered list with a pattern tag alongside the image, instead of a
+     * plain bullet list. Use instead of `items` when `media.sideBySide` is set.
+     */
+    callouts?: {
+      text: string;
+      tag: string;
+      /** Position of the matching pin on the image, as a percent from the left/top. */
+      x: number;
+      y: number;
+    }[];
     media?: {
       images: {
         src: string;
@@ -375,10 +389,25 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: "01 — Insights, not just the line",
         body: "The Executive Outlook is a top-level read on whether the system can meet demand; from here the platform splits into four pillars — beds, workforce, clinical services, and budget. We led with a single interactive forecast chart instead of a grid of widgets, because that projection is what leadership needs before anything else. Colour-coded points, a defined stroke on the active item, and cards set one section apart from the next; the key insights below carry the rest of the story in plain language.",
-        items: [
-          "The forecast chart, front and centre — visibility of system status.",
-          "Marked points along the line signal hover detail — recognition over recall.",
-          "Insights written as conclusions, not chart labels — match to the real world.",
+        callouts: [
+          {
+            text: "The forecast chart, front and centre.",
+            tag: "Visibility of System Status",
+            x: 6,
+            y: 30,
+          },
+          {
+            text: "Marked points along the line signal hover detail.",
+            tag: "Recognition Over Recall",
+            x: 67,
+            y: 43,
+          },
+          {
+            text: "Insights written as conclusions, not chart labels.",
+            tag: "Match Between System & Real World",
+            x: 4,
+            y: 85,
+          },
         ],
         media: {
           images: [
@@ -396,10 +425,25 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: "02 — Status language anyone can read",
         body: "The Access & Wait Times screen shows how long patients wait across services and facilities; planners use it to decide where capacity needs to move, so the job is to surface the worst cases fast. We showed severity as colour rather than a number, so the critical rows register before you've read a value. The table sorts by longest waits by default, letting the order do the triage, and a short plain-language summary underneath names the pattern.",
-        items: [
-          "Longest waits sorted to the top — visibility of system status.",
-          "A colour-coded severity column — recognition over recall.",
-          "The plain-language summary below — match to the real world.",
+        callouts: [
+          {
+            text: "Longest waits sorted to the top.",
+            tag: "Visibility of System Status",
+            x: 7,
+            y: 35,
+          },
+          {
+            text: "A colour-coded severity column.",
+            tag: "Recognition Over Recall",
+            x: 89,
+            y: 35,
+          },
+          {
+            text: "The plain-language summary below.",
+            tag: "Match Between System & Real World",
+            x: 3,
+            y: 88,
+          },
         ],
         media: {
           images: [
@@ -417,10 +461,25 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: "03 — Reports that stay alive",
         body: "The Report Library is where teams keep the reports they rely on — the system's standard ones and their own custom requests. The risk with any reporting tool is that saved reports quietly go stale, so we set them to refresh on a schedule and kept that state visible — the data reads as current instead of something to double-check. System and custom reports look the same and sit on one shelf, so where a report came from never becomes a thing to think about; filters sit to the left, where scanning starts.",
-        items: [
-          "A visible refresh status indicator — visibility of system status.",
-          "System and custom reports on one shelf — consistency & standards.",
-          "Filters placed where scanning begins — match to the real world.",
+        callouts: [
+          {
+            text: "A visible refresh status indicator.",
+            tag: "Visibility of System Status",
+            x: 7,
+            y: 24,
+          },
+          {
+            text: "System and custom reports on one shelf.",
+            tag: "Consistency & Standards",
+            x: 27,
+            y: 32,
+          },
+          {
+            text: "Filters placed where scanning begins.",
+            tag: "Match Between System & Real World",
+            x: 13,
+            y: 32,
+          },
         ],
         media: {
           images: [
@@ -438,9 +497,19 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: "04 — High-stakes data, organised for clarity",
         body: "Every number in the platform depends on the data underneath it being clean. The Data Quality Hub is where teams catch mismatches and validation errors before they reach a report, so the screen carries a lot of dense information at once. We carried the same status language from the rest of the platform in, so nothing has to be relearned, and validation reads as pass or fail rather than a score to interpret — each row resolves at a glance.",
-        items: [
-          "Consistent status badges — consistency & standards.",
-          "A pass / fail validation column — recognition over recall.",
+        callouts: [
+          {
+            text: "Consistent status badges.",
+            tag: "Consistency & Standards",
+            x: 21,
+            y: 39,
+          },
+          {
+            text: "A pass / fail validation column.",
+            tag: "Recognition Over Recall",
+            x: 69,
+            y: 63,
+          },
         ],
         media: {
           images: [

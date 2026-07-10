@@ -174,24 +174,47 @@ export default async function CaseStudyPage({
                           {section.body}
                         </p>
                       )}
-                      {section.items && (
-                        <ul className="mt-5 space-y-3">
-                          {section.items.map((item, i) => (
+                      {section.callouts ? (
+                        <ol className="mt-6 space-y-5">
+                          {section.callouts.map((c, i) => (
                             <li key={i} className="flex gap-4">
                               <span
                                 aria-hidden
-                                className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--proj)]"
-                              />
-                              <p className="font-body text-lg text-ink-soft leading-relaxed">
-                                {item}
-                              </p>
+                                className="field-label mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[color:var(--proj)] text-paper"
+                              >
+                                {i + 1}
+                              </span>
+                              <div>
+                                <p className="font-body text-lg text-ink-soft leading-relaxed">
+                                  {c.text}
+                                </p>
+                                <span className="field-label mt-2 inline-block rounded-full border border-[color:var(--proj)]/40 px-2.5 py-1 text-[color:var(--proj)]">
+                                  {c.tag}
+                                </span>
+                              </div>
                             </li>
                           ))}
-                        </ul>
+                        </ol>
+                      ) : (
+                        section.items && (
+                          <ul className="mt-5 space-y-3">
+                            {section.items.map((item, i) => (
+                              <li key={i} className="flex gap-4">
+                                <span
+                                  aria-hidden
+                                  className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--proj)]"
+                                />
+                                <p className="font-body text-lg text-ink-soft leading-relaxed">
+                                  {item}
+                                </p>
+                              </li>
+                            ))}
+                          </ul>
+                        )
                       )}
                     </div>
                     <figure>
-                      <div className="overflow-hidden border hairline bg-panel">
+                      <div className="relative overflow-hidden border hairline bg-panel">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={section.media.images[0].src}
@@ -202,6 +225,16 @@ export default async function CaseStudyPage({
                           decoding="async"
                           className="h-auto w-full"
                         />
+                        {section.callouts?.map((c, i) => (
+                          <span
+                            key={i}
+                            aria-hidden
+                            className="field-label absolute flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[color:var(--proj)] text-paper shadow-[0_1px_6px_rgba(0,0,0,0.35)] ring-2 ring-paper"
+                            style={{ left: `${c.x}%`, top: `${c.y}%` }}
+                          >
+                            {i + 1}
+                          </span>
+                        ))}
                       </div>
                       {section.media.caption && (
                         <figcaption className="mt-3 font-body text-sm text-ink-faint leading-relaxed">
