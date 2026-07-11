@@ -812,13 +812,26 @@ export const caseStudies: CaseStudy[] = [
               w: 1400,
               h: 1400,
             },
+            {
+              src: "/work/biofutures/workshop-room.jpg",
+              alt: "The full workshop room mid-session: a facilitator presenting World Building Starters on screen while teams work through cards and sticky notes at their tables.",
+              w: 1600,
+              h: 1600,
+            },
+            {
+              src: "/work/biofutures/group-photo.jpg",
+              alt: "The full group of participants, scientists, and facilitators posing together at the end of the workshop.",
+              w: 1600,
+              h: 1600,
+            },
           ],
-          caption: "The invitation, for the public event hosted at RMI in Peshawar with Precision Medicine Lab.",
+          contain: true,
+          caption: "The invitation, the room mid-session, and the group at the end of the day, at RMI in Peshawar with Precision Medicine Lab.",
         },
       },
       {
         heading: "What the teams made",
-        body: "Every group presented a coherent world with a biodesign intervention inside it. The tables filled with worksheets, systems maps, and sticky-note storms.",
+        body: "Every group presented a coherent world with a biodesign intervention inside it. The tables filled with worksheets, hand-drawn worlds, and sticky-note storms.",
         media: {
           images: [
             {
@@ -828,10 +841,10 @@ export const caseStudies: CaseStudy[] = [
               h: 1200,
             },
             {
-              src: "/work/biofutures/artifact-systems-map.jpg",
-              alt: "A systems map drawn on a window with colored sticky dots and connecting lines.",
-              w: 1600,
-              h: 1200,
+              src: "/work/biofutures/artifact-sketch.jpg",
+              alt: "A hand-drawn sketch of a team's future world, labelled Living Quarters and Biogas Production, with a figure and livestock.",
+              w: 1200,
+              h: 1600,
             },
             {
               src: "/work/biofutures/artifact-notes.jpg",
@@ -840,7 +853,7 @@ export const caseStudies: CaseStudy[] = [
               h: 1200,
             },
           ],
-          caption: "Participant artifacts: worlds sketched, mapped, and argued onto paper in ninety minutes.",
+          caption: "Participant artifacts: worlds sketched, drawn, and argued onto paper in ninety minutes.",
         },
       },
       {
