@@ -50,6 +50,8 @@ export type CaseStudy = {
       }[];
       /** Fit each image uncropped within its frame instead of cropping to a shared ratio: for designed graphics (posters, screenshots) where cropping would cut off content. */
       contain?: boolean;
+      /** Path to a shared "back" image: each tile flips on hover to reveal it, card-style. */
+      flipBack?: string;
       /** Render the heading/body/items in one column and the image in an adjacent column, instead of stacking the image full-width below the text. Keeps tall single screenshots from eating a whole scroll with little text visible alongside. */
       sideBySide?: boolean;
       caption?: string;
@@ -748,42 +750,55 @@ export const caseStudies: CaseStudy[] = [
         },
       },
       {
-        heading: "Five categories, one system",
-        body: "The finished deck spans seven categories of change; five of them are shown here. Each card names a single future, from circular economies to CRISPR to space migration, so a team can hold a whole world in one hand of cards instead of an abstract brief.",
+        heading: "Seven categories, one system",
+        body: "The finished deck spans seven categories of change, one card shown here from each. Every card names a single future, from circular economies to CRISPR to space migration, so a team can hold a whole world in one hand of cards instead of an abstract brief. Hover a card to flip it, the way it plays at the table.",
         media: {
           images: [
             {
               src: "/work/biofutures/deck/economic.jpg",
-              alt: "The Economic Models category board: a grid of teal futures cards about circular economies, automation, and resource distribution.",
-              w: 2000,
-              h: 1682,
+              alt: "An Economic Models card: 'Synbio-led biomanufacturing has replaced 90% of fossil-fuel derived ingredients in value chains across the global economy.'",
+              w: 1536,
+              h: 2304,
             },
             {
               src: "/work/biofutures/deck/emerging.jpg",
-              alt: "The Emerging Technologies category board: a grid of blue futures cards about DNA sequencing, CRISPR, and space travel.",
-              w: 2000,
-              h: 1635,
+              alt: "An Emerging Technologies card: 'Stem Cell research has exponentially increased, and is used in every speciality.'",
+              w: 1536,
+              h: 2304,
             },
             {
               src: "/work/biofutures/deck/food.jpg",
-              alt: "The Food Security category board: a grid of green futures cards about hydroponics and redistributed food systems.",
-              w: 1999,
-              h: 1292,
+              alt: "A Food Security card: 'The global north learns from the south to build localized agricultural practices.'",
+              w: 1536,
+              h: 2304,
             },
             {
               src: "/work/biofutures/deck/govt.jpg",
-              alt: "The Government and Policy category board: a grid of maroon futures cards about biotech regulation and space migration quotas.",
-              w: 2000,
-              h: 1655,
+              alt: "A Government & Policy card: 'Policies ensure that DNA sequencing and medical advancements are accessible to all.'",
+              w: 1536,
+              h: 2304,
             },
             {
               src: "/work/biofutures/deck/health.jpg",
-              alt: "The Healthcare category board: a grid of dark futures cards about personalized medicine and disease eradication.",
-              w: 2000,
-              h: 1062,
+              alt: "A Healthcare card: 'DNA sequencing allows for personalized medicine, while the \"one magic pill\" cures most diseases.'",
+              w: 1536,
+              h: 2304,
+            },
+            {
+              src: "/work/biofutures/deck/living.jpg",
+              alt: "A Living Conditions card: 'Work times align with natural seasons and people are in-tune with their circadian rhythm.'",
+              w: 1536,
+              h: 2304,
+            },
+            {
+              src: "/work/biofutures/deck/social.jpg",
+              alt: "A Social Dynamics & Community card: 'Seamless cyborg integration gives rise to inferiority complex amongst people.'",
+              w: 1536,
+              h: 2304,
             },
           ],
-          caption: "The final deck, category by category: Economic Models, Emerging Technologies, Food Security, Government & Policy, and Healthcare.",
+          flipBack: "/work/biofutures/deck/card-back.jpg",
+          caption: "One card from each of the deck's seven categories: Economic Models, Emerging Technologies, Food Security, Government & Policy, Healthcare, Living Conditions, and Social Dynamics & Community.",
         },
       },
       {

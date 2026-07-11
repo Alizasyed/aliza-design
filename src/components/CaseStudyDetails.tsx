@@ -230,6 +230,7 @@ export function CaseStudyDetails({ project }: { project: CaseStudy }) {
                     // since cropping would cut off text/content.
                     const multi = section.media!.images.length > 1;
                     const contain = section.media!.contain;
+                    const flipBack = section.media!.flipBack;
                     const ratio = section.media!.images[0];
                     return section.media!.images.map((img) => (
                       <div key={img.src}>
@@ -242,31 +243,58 @@ export function CaseStudyDetails({ project }: { project: CaseStudy }) {
                             {img.label}
                           </p>
                         )}
-                        <div
-                          className="overflow-hidden border hairline bg-panel"
-                          style={
-                            multi
-                              ? { aspectRatio: contain ? "1 / 1" : `${ratio.w} / ${ratio.h}` }
-                              : undefined
-                          }
-                        >
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={img.src}
-                            alt={img.alt}
-                            width={img.w}
-                            height={img.h}
-                            loading="lazy"
-                            decoding="async"
-                            className={
-                              !multi
-                                ? "h-auto w-full"
-                                : contain
-                                  ? "h-full w-full object-contain"
-                                  : "h-full w-full object-cover"
+                        {flipBack ? (
+                          <div
+                            className="group/flip overflow-hidden border hairline bg-panel [perspective:1000px]"
+                            style={{ aspectRatio: `${ratio.w} / ${ratio.h}` }}
+                          >
+                            <div className="relative h-full w-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] [transform-style:preserve-3d] group-hover/flip:[transform:rotateY(180deg)]">
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={img.src}
+                                alt={img.alt}
+                                loading="lazy"
+                                decoding="async"
+                                className="absolute inset-0 h-full w-full object-cover [backface-visibility:hidden]"
+                              />
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={flipBack}
+                                alt=""
+                                aria-hidden
+                                loading="lazy"
+                                decoding="async"
+                                className="absolute inset-0 h-full w-full object-cover [backface-visibility:hidden] [transform:rotateY(180deg)]"
+                              />
+                            </div>
+                          </div>
+                        ) : (
+                          <div
+                            className="overflow-hidden border hairline bg-panel"
+                            style={
+                              multi
+                                ? { aspectRatio: contain ? "1 / 1" : `${ratio.w} / ${ratio.h}` }
+                                : undefined
                             }
-                          />
-                        </div>
+                          >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={img.src}
+                              alt={img.alt}
+                              width={img.w}
+                              height={img.h}
+                              loading="lazy"
+                              decoding="async"
+                              className={
+                                !multi
+                                  ? "h-auto w-full"
+                                  : contain
+                                    ? "h-full w-full object-contain"
+                                    : "h-full w-full object-cover"
+                              }
+                            />
+                          </div>
+                        )}
                       </div>
                     ));
                   })()}
