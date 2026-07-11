@@ -819,6 +819,12 @@ export const caseStudies: CaseStudy[] = [
               h: 1600,
             },
             {
+              src: "/work/biofutures/presenter.jpg",
+              alt: "Aliza facilitating the session, mid-gesture, with the presentation screen behind her.",
+              w: 1600,
+              h: 1600,
+            },
+            {
               src: "/work/biofutures/group-photo.jpg",
               alt: "The full group of participants, scientists, and facilitators posing together at the end of the workshop.",
               w: 1600,
@@ -826,7 +832,7 @@ export const caseStudies: CaseStudy[] = [
             },
           ],
           contain: true,
-          caption: "The invitation, the room mid-session, and the group at the end of the day, at RMI in Peshawar with Precision Medicine Lab.",
+          caption: "The invitation, the room mid-session, me running the futuring, and the group at the end of the day, at RMI in Peshawar with Precision Medicine Lab.",
         },
       },
       {
