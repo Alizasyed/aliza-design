@@ -1166,13 +1166,13 @@ export const clients: {
 }[] = [
   { name: "MMBL", slugs: ["mmbl"] },
   { name: "UK Government (FCDO)", slugs: ["climate-finance-accelerator"] },
-  { name: "DAI", slugs: ["climate-finance-accelerator"] },
+  { name: "DAI", slugs: ["climate-finance-accelerator"], logo: "/logos/dai.png", logoAspect: 3.6 },
   { name: "PwC", slugs: ["climate-finance-accelerator"] },
   { name: "Ideate Innovation", slugs: ["mmbl", "healthops", "maternal-health-research", "max"] },
   { name: "NYU ITP", slugs: ["what-she-carried"] },
   { name: "Precision Medicine Lab", slugs: ["biofutures"] },
   { name: "Global Health Foundation", slugs: ["maternal-health-research"] },
-  { name: "UNICEF" },
+  { name: "UNICEF", logo: "/logos/unicef.svg", logoAspect: 3.6 },
 ];
 
 export const testimonials: {
