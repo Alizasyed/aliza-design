@@ -76,6 +76,8 @@ export type CaseStudy = {
   nda?: boolean;
   /** Shown as a small italic note under the header meta, e.g. confidentiality/anonymisation terms. */
   confidentialityNote?: string;
+  /** Everything past the overview (problem, approach, sections, outcome, metrics) is withheld server-side until a password is entered. */
+  locked?: boolean;
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -1030,6 +1032,7 @@ export const caseStudies: CaseStudy[] = [
     tools: "Figma",
     confidentialityNote:
       "Delivered through Ideate Innovation; the commissioning client is anonymised under NDA and the initiative was paused before launch. Brand content shown (e.g. Valorant) is illustrative example content used during design, not a confirmed partner. Designed in equal collaboration with two other Ideate designers.",
+    locked: true,
     sections: [
       {
         heading: "One page, built for the community",
