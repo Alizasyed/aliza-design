@@ -1194,6 +1194,7 @@ export const testimonials: {
     role: "Creative Director & Adjunct Professor of Design",
     company: "Ideate Innovation",
     accent: "#2f5ef2",
+    linkedin: "https://www.linkedin.com/in/umairabbasii/",
   },
   {
     quote:
@@ -1203,6 +1204,7 @@ export const testimonials: {
     role: "Founder & CEO",
     company: "Productbox",
     accent: "#d98324",
+    linkedin: "https://www.linkedin.com/in/waleed-waseem-2b625270/",
   },
   {
     quote:
@@ -1212,6 +1214,7 @@ export const testimonials: {
     role: "Executive Producer",
     company: "Jack Morton",
     accent: "#1f9d6b",
+    linkedin: "https://www.linkedin.com/in/sarahshulman/",
   },
   {
     quote:
@@ -1220,6 +1223,7 @@ export const testimonials: {
     name: "Masna bin Umeed",
     role: "Product Design & Design Systems",
     accent: "#cf3d73",
+    linkedin: "https://www.linkedin.com/in/masnabinumeed/",
   },
 ];
 

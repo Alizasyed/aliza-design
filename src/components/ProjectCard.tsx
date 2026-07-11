@@ -60,8 +60,8 @@ export function ProjectCard({ project }: { project: CaseStudy }) {
           <p className="field-label text-ink-faint mt-3">{project.client}</p>
         </div>
 
-        <div className="sm:col-span-3 flex flex-wrap items-center gap-2">
-          <span className="field-label rounded-full border border-[color:var(--proj)]/40 px-2.5 py-1 text-[color:var(--proj)]">
+        <div className="sm:col-span-3 flex flex-wrap items-center gap-1.5 sm:gap-2">
+          <span className="field-label rounded-full border border-[color:var(--proj)]/40 px-2 py-0.5 text-[color:var(--proj)] sm:px-2.5 sm:py-1">
             {project.sector}
           </span>
           <span className="field-label text-ink-faint">{project.year}</span>
