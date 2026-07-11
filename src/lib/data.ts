@@ -682,8 +682,149 @@ export const caseStudies: CaseStudy[] = [
     accent: "#d98324",
   },
   {
-    slug: "maternal-health-research",
+    slug: "biofutures",
     index: "05",
+    title: "Biofutures: Design Thinking for the Planet and Beyond",
+    client: "Ideate Innovation × Precision Medicine Lab",
+    tagline:
+      "A three-phase futuring programme for World Interaction Design Day 2024: designers and scientists built fictional worlds together, turned them into a card deck, and used it to teach a room in Peshawar to imagine biofutures.",
+    year: "2024",
+    sector: "Speculative Design / Facilitation",
+    role: "Workshop Designer & Lead Facilitator",
+    type: "Futuring workshops · Card deck · Community programme",
+    tools: "Figma · Miro",
+    summary:
+      "World Interaction Design Day 2024 asked what new dimensions should be added to design. At Ideate, I chose biology, and partnered with Precision Medicine Lab, a federally funded research lab in Peshawar, to build a programme around it. The result was three layered workshops: an internal one that built the toolkit, a public one that used it, and a retro that dissected what happened.",
+    problem:
+      "Biotech is widely called the next wave after AI, but the local design community has almost no shared vocabulary with the scientists driving it. And the stakes are real: 96% of medicines in Pakistan are not tailored to the local population, because clinical trials are run and approved elsewhere. Before anyone can design better biofutures, they need practice imagining them at all.",
+    pullQuote: "The future exists first in imagination, then in will, then in reality.",
+    pullQuoteAttribution: "Barbara Marx Hubbard, from the workshop's opening",
+    approach: [
+      "Start in the lab, not the studio: an introductory call and a full-day visit to Precision Medicine Lab, meeting the scientists and touring the wet lab, data lab, space biology, and skunkworks teams.",
+      "Design and facilitate an internal worldbuilding workshop where designers and scientists imagine future worlds together, then turn that raw material into a futures card deck.",
+      "Host the public workshop in Peshawar, where interdisciplinary teams use the deck to build worlds and pitch biodesign interventions, then close the loop with a public retro on Interaction Design Day itself.",
+    ],
+    sections: [
+      {
+        heading: "Starting in the lab, not the studio",
+        body: "IxDD's 2024 theme was Adding Dimensions. I pitched biology as ours, and reached out to Dr. Faisal Khan at Precision Medicine Lab, a research lab sitting inside one of the region's largest medical hubs. Before designing anything, I spent a day there: the space biology team studying astronaut health, the wet lab growing cell cultures from local biopsies, the data lab training AI to detect cancer, and skunkworks turning microbes into pigments. That visit set the brief. The lab had world-class science and no design community around it; we had designers who had never spoken to a scientist.",
+      },
+      {
+        heading: "Phase one: building worlds with scientists",
+        body: "In September, I ran a virtual worldbuilding session with thirteen co-designers: Ideate's design team and PML's scientists in one Miro board. In small groups we built fictional future worlds, defined what was causing big changes in each, and identified the tensions worth designing for. The scientists kept the biology honest; the designers kept the worlds habitable. Everything produced here became raw material for the next phase.",
+        media: {
+          images: [
+            {
+              src: "/work/biofutures/miro-board.jpg",
+              alt: "The Miro board from the internal worldbuilding workshop, with four groups' card clusters and world descriptions.",
+              w: 1800,
+              h: 808,
+            },
+          ],
+          caption: "The phase-one Miro board: four groups, four worlds, and the raw material for the card deck.",
+        },
+      },
+      {
+        heading: "A card deck built from those worlds",
+        body: "I distilled the worlds, drivers, and signals from phase one into a futures card deck, designed in Figma and printed for the event. Cards are grouped into categories and revealed in stages: teams get two to set the scene, one to complicate it, and two more to complete their world. The staged reveal keeps groups improvising together instead of settling on their first idea.",
+        media: {
+          images: [
+            {
+              src: "/work/biofutures/cards-1.jpg",
+              alt: "The printed futures cards on a workshop table, surrounded by handwritten sticky notes.",
+              w: 1600,
+              h: 1200,
+            },
+            {
+              src: "/work/biofutures/cards-2.jpg",
+              alt: "A team's drawn cards laid out next to their notebook during the worldbuilding exercise.",
+              w: 1600,
+              h: 1200,
+            },
+          ],
+          caption: "The deck in play: category cards drawn in stages, annotated and argued over.",
+        },
+      },
+      {
+        heading: "Phase two: the workshop in Peshawar",
+        body: "Around twenty participants came to the public workshop: designers, researchers, architects, and policy people. Dr. Faisal opened with the science; I ran the futuring. Teams drew their cards, built their worlds, visualized them, and pitched biodesign interventions for the futures they had imagined, each answering one question: what is one thing you can do today to make your world a reality?",
+        media: {
+          images: [
+            {
+              src: "/work/biofutures/poster.jpg",
+              alt: "The Biofutures workshop poster, with a flower under a bell jar and the host and facilitator names.",
+              label: "The invitation",
+              w: 1400,
+              h: 1400,
+            },
+            {
+              src: "/work/biofutures/workshop-room.jpg",
+              alt: "The workshop room in Peshawar during the event.",
+              label: "The room",
+              w: 1600,
+              h: 1168,
+            },
+          ],
+          caption: "The public event, hosted at RMI in Peshawar with Precision Medicine Lab.",
+        },
+      },
+      {
+        heading: "What the teams made",
+        body: "Every group presented a coherent world with a biodesign intervention inside it. The tables filled with worksheets, systems maps, and sticky-note storms.",
+        media: {
+          images: [
+            {
+              src: "/work/biofutures/artifact-worksheet.jpg",
+              alt: "A team's mind map naming their world The Untidy Eutopia, branching into food, health, social life, and care.",
+              w: 1600,
+              h: 1200,
+            },
+            {
+              src: "/work/biofutures/artifact-systems-map.jpg",
+              alt: "A systems map drawn on a window with colored sticky dots and connecting lines.",
+              w: 1600,
+              h: 1200,
+            },
+            {
+              src: "/work/biofutures/artifact-notes.jpg",
+              alt: "Two pages of handwritten worldbuilding notes covering family structure, food, transport, and energy.",
+              w: 1600,
+              h: 1200,
+            },
+          ],
+          caption: "Participant artifacts: worlds sketched, mapped, and argued onto paper in ninety minutes.",
+        },
+      },
+      {
+        heading: "Phase three: dissecting design",
+        body: "On September 26, Interaction Design Day itself, we closed the loop with Dissecting Design, our online discussion series. With PML we unpacked what happens when biodesign's constraints meet design thinking's optimism, which industries feel it first, and what a design community owes the planet it designs on.",
+        media: {
+          images: [
+            {
+              src: "/work/biofutures/ixdd-poster.jpg",
+              alt: "The official World Interaction Design Day 2024 poster, dated September 26.",
+              w: 1200,
+              h: 1675,
+            },
+          ],
+          caption: "World Interaction Design Day 2024, the day the retro aired.",
+        },
+      },
+    ],
+    outcome:
+      "Around twenty people from design, research, architecture, and policy spent an afternoon building futures they had never been asked to imagine, and left with a method they could reuse. The deck survives as a standalone toolkit, and the collaboration built a working bridge between Peshawar's design and biotech communities on the day the global design calendar was watching.",
+    metrics: [
+      { label: "Workshops run", value: "3" },
+      { label: "Co-designers", value: "13" },
+      { label: "Participants", value: "~20" },
+    ],
+    image: "/work/biofutures/hero.jpg",
+    imageAlt: "The printed futures cards spread across a workshop table with sticky notes during the Biofutures event.",
+    accent: "#0e94a0",
+  },
+  {
+    slug: "maternal-health-research",
+    index: "06",
     title: "Why Women Stop Taking the Pill",
     client: "Global Health Foundation (under NDA) × Ideate Innovation",
     tagline:
@@ -861,6 +1002,7 @@ export const clients: {
   { name: "PwC", slugs: ["climate-finance-accelerator"] },
   { name: "Ideate Innovation", slugs: ["mmbl", "healthops", "maternal-health-research"] },
   { name: "NYU ITP", slugs: ["what-she-carried"] },
+  { name: "Precision Medicine Lab", slugs: ["biofutures"] },
   { name: "Global Health Foundation", slugs: ["maternal-health-research"] },
   { name: "UNICEF" },
 ];
