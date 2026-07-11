@@ -746,6 +746,45 @@ export const caseStudies: CaseStudy[] = [
         },
       },
       {
+        heading: "Five categories, one system",
+        body: "The finished deck spans seven categories of change; five of them are shown here. Each card names a single future, from circular economies to CRISPR to space migration, so a team can hold a whole world in one hand of cards instead of an abstract brief.",
+        media: {
+          images: [
+            {
+              src: "/work/biofutures/deck/economic.jpg",
+              alt: "The Economic Models category board: a grid of teal futures cards about circular economies, automation, and resource distribution.",
+              w: 2000,
+              h: 1682,
+            },
+            {
+              src: "/work/biofutures/deck/emerging.jpg",
+              alt: "The Emerging Technologies category board: a grid of blue futures cards about DNA sequencing, CRISPR, and space travel.",
+              w: 2000,
+              h: 1635,
+            },
+            {
+              src: "/work/biofutures/deck/food.jpg",
+              alt: "The Food Security category board: a grid of green futures cards about hydroponics and redistributed food systems.",
+              w: 1999,
+              h: 1292,
+            },
+            {
+              src: "/work/biofutures/deck/govt.jpg",
+              alt: "The Government and Policy category board: a grid of maroon futures cards about biotech regulation and space migration quotas.",
+              w: 2000,
+              h: 1655,
+            },
+            {
+              src: "/work/biofutures/deck/health.jpg",
+              alt: "The Healthcare category board: a grid of dark futures cards about personalized medicine and disease eradication.",
+              w: 2000,
+              h: 1062,
+            },
+          ],
+          caption: "The final deck, category by category: Economic Models, Emerging Technologies, Food Security, Government & Policy, and Healthcare.",
+        },
+      },
+      {
         heading: "Phase two: the workshop in Peshawar",
         body: "Around twenty participants came to the public workshop: designers, researchers, architects, and policy people. Dr. Faisal opened with the science; I ran the futuring. Teams drew their cards, built their worlds, visualized them, and pitched biodesign interventions for the futures they had imagined, each answering one question: what is one thing you can do today to make your world a reality?",
         media: {
@@ -753,19 +792,11 @@ export const caseStudies: CaseStudy[] = [
             {
               src: "/work/biofutures/poster.jpg",
               alt: "The Biofutures workshop poster, with a flower under a bell jar and the host and facilitator names.",
-              label: "The invitation",
               w: 1400,
               h: 1400,
             },
-            {
-              src: "/work/biofutures/workshop-room.jpg",
-              alt: "The workshop room in Peshawar during the event.",
-              label: "The room",
-              w: 1600,
-              h: 1168,
-            },
           ],
-          caption: "The public event, hosted at RMI in Peshawar with Precision Medicine Lab.",
+          caption: "The invitation, for the public event hosted at RMI in Peshawar with Precision Medicine Lab.",
         },
       },
       {
@@ -798,17 +829,6 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: "Phase three: dissecting design",
         body: "On September 26, Interaction Design Day itself, we closed the loop with Dissecting Design, our online discussion series. With PML we unpacked what happens when biodesign's constraints meet design thinking's optimism, which industries feel it first, and what a design community owes the planet it designs on.",
-        media: {
-          images: [
-            {
-              src: "/work/biofutures/ixdd-poster.jpg",
-              alt: "The official World Interaction Design Day 2024 poster, dated September 26.",
-              w: 1200,
-              h: 1675,
-            },
-          ],
-          caption: "World Interaction Design Day 2024, the day the retro aired.",
-        },
       },
     ],
     outcome:
@@ -980,6 +1000,151 @@ export const caseStudies: CaseStudy[] = [
     imageAlt: "Prenatal supplements, including folic acid and calcium lactate, on a pharmacy shelf during field research in Pakistan.",
     accent: "#cf3d73",
   },
+  {
+    slug: "max",
+    index: "07",
+    title: "Giving Gaming Communities a Home of Their Own",
+    client: "Gaming Engagement Platform (under NDA) × Ideate Innovation",
+    tagline: "A no-code page builder and AI-powered analytics platform helping gaming brands turn their Discord communities into interactive, rewarding experiences.",
+    year: "2025",
+    sector: "Gaming / Marketing Technology",
+    role: "Product Designer, equal collaboration with two other designers",
+    type: "SaaS platform design · Web app + analytics dashboard",
+    summary:
+      "Gaming brands build huge, active communities on Discord, but Discord itself gives them no ownable space to showcase a brand, run rewards, or actually see who their best fans are. This product lets a brand spin up a branded, interactive page connected to that community in minutes, then shows them what's happening inside it.",
+    problem:
+      "A brand's community already exists. What it doesn't have is a home: somewhere to bring a 3D item drop, a live chat, a poll, and a rewards balance together under its own look and feel, without engineering effort. And once that page exists, the brand still can't answer a basic question: which fans actually matter, and what should we do for them next?",
+    pullQuote: "Gaming brands already have their community. What they don't have is a place to reward it.",
+    approach: [
+      "Mapped the flow end to end: connect a Discord server, brand a page in minutes, build it from templates or from scratch, then read what the audience does on it.",
+      "Designed a widget-based creation system (3D interaction, live chat, polls, rewards) that reskins cleanly across light and dark, so one page structure works for very different brand identities.",
+      "Built the analytics layer, MAX Core, around AI-generated insight and segment-level recommendations, not just charts.",
+    ],
+    outcome:
+      "A complete, validated concept spanning onboarding, page creation, and analytics, handed off as a documented Figma system. The client paused the initiative before build, so this reflects the design work as delivered, not a shipped product.",
+    metrics: [
+      { label: "Core surfaces designed", value: "3" },
+      { label: "Page templates shipped", value: "3" },
+      { label: "Designers, equal collaboration", value: "3" },
+    ],
+    tools: "Figma",
+    confidentialityNote:
+      "Delivered through Ideate Innovation; the commissioning client is anonymised under NDA and the initiative was paused before launch. Brand content shown (e.g. Valorant) is illustrative example content used during design, not a confirmed partner. Designed in equal collaboration with two other Ideate designers.",
+    sections: [
+      {
+        heading: "One page, built for the community",
+        body: "The pitch was simple to say and hard to deliver: give a brand a single page that pulls its community's favourite things (a chat, a poll, a reward) into one place, styled like the brand and not like a template. The landing experience had to sell that in one scroll, to a marketing lead who has never used a page builder before.",
+        media: {
+          images: [
+            {
+              src: "/work/max/landing.jpg",
+              alt: "Max marketing landing page: 'Engage with your audience', with audience insight cards and a mascot character.",
+              w: 1800,
+              h: 1125,
+            },
+          ],
+          caption: "The pitch, in one scroll: audience insight, community rewards, and a branded mascot doing the explaining.",
+        },
+      },
+      {
+        heading: "Branding a page in minutes",
+        body: "Setup asks for exactly what's needed to make a page feel like the brand's own: a project name, the Discord server and channel it lives inside, a logo, an accent colour, a theme, a font. Nothing here is a Max concept the user has to learn first.",
+        media: {
+          images: [
+            {
+              src: "/work/max/onboarding-branding.jpg",
+              alt: "Welcome to Max onboarding screen: project name, Discord server selection, logo upload, accent colour, theme, and font.",
+              w: 1800,
+              h: 1125,
+            },
+          ],
+          caption: "Setup speaks the brand's language first: Discord server, logo, accent colour, font.",
+        },
+      },
+      {
+        heading: "Templates that fit the moment",
+        body: "Not every brand needs the same page. A single-drop launch wants one hero moment; a brand running several rewards at once wants them all visible; a brand mostly broadcasting news wants a feed. Three starting layouts cover those cases, each named for the job it does rather than for what it looks like.",
+        items: [
+          "Center-Stage: for highlighting a single brand experience.",
+          "Bento: for showcasing multiple rewards and interactions.",
+          "Notice-board: for listing broadcasts and announcements.",
+        ],
+        media: {
+          images: [
+            {
+              src: "/work/max/template-picker.jpg",
+              alt: "Template picker showing three starting layouts: Center-Stage, Bento, and Notice-board.",
+              w: 1800,
+              h: 1125,
+            },
+          ],
+          caption: "Three layouts, each named for the job it does, not the shape it makes.",
+        },
+      },
+      {
+        heading: "A builder that reskins itself",
+        body: "The creation surface is a widget canvas: 3D object interaction, live chat backed by an AI assistant, a player profile, polls, rewards, all dropped onto a page and restyled with a background and accent colour. The same widget set had to hold up equally well against a soft pastel background and a full-bleed, in-universe game illustration, since brands would want both.",
+        media: {
+          images: [
+            {
+              src: "/work/max/editor-light.jpg",
+              alt: "Max Creation editor in a light pink theme, showing 3D interaction, live chat, and poll widgets for a Valorant page.",
+              label: "Light theme",
+              w: 1800,
+              h: 1125,
+            },
+            {
+              src: "/work/max/editor-dark.jpg",
+              alt: "The same Max Creation editor restyled with a dramatic dark, full-bleed game illustration background.",
+              label: "Dark theme",
+              w: 1800,
+              h: 1125,
+            },
+          ],
+          caption: "Same widgets, same layout logic, two completely different brand moods.",
+        },
+      },
+      {
+        heading: "Campaign controls that stay out of the way",
+        body: "Publishing a page isn't a single action, it's a set of decisions a brand needs to keep making: is this campaign live or still a draft, is there a player limit, what happens in each integration. Those controls sit in their own tabbed settings panel rather than crowding the creative canvas.",
+        media: {
+          images: [
+            {
+              src: "/work/max/campaign-settings.jpg",
+              alt: "Campaign Settings panel with tabs for Campaign Settings, Theme & Branding, Content, Integrations, Advanced, and Publishing, plus a Draft/Live toggle.",
+              w: 1800,
+              h: 1125,
+            },
+          ],
+          caption: "Draft and Live sit side by side as an explicit choice, not a hidden publish state.",
+        },
+      },
+      {
+        heading: "Turning community data into direction",
+        body: "MAX Core is the half of the product that answers 'so what do we do now?' Every metric is paired with a plain-language read of it, and every audience segment comes with a suggested next action rather than a raw number.",
+        items: [
+          "Total audience, active-this-week, session time, and retention, each with an AI-confidence score attached.",
+          "A MAX Recommendation surfaced directly under the headline number: which segment to act on, and why.",
+          "Four audience segments (Top Fans, Frequent Claimers, Dormant Players, Influencers), each with its own engagement, growth, and a one-click action.",
+        ],
+        media: {
+          images: [
+            {
+              src: "/work/max/analytics-dashboard.jpg",
+              alt: "MAX Core analytics dashboard: total audience, AI insight and recommendation, and four audience segments (Top Fans, Frequent Claimers, Dormant Players, Influencers).",
+              w: 1183,
+              h: 1800,
+            },
+          ],
+          sideBySide: true,
+          caption: "MAX Core: Audience Overview, with an AI recommendation surfaced above the segments themselves.",
+        },
+      },
+    ],
+    image: "/work/max/hero-creation-dark.jpg",
+    imageAlt: "The Max Creation editor restyled with a dark, full-bleed game illustration background, showing live chat, 3D interaction, and player profile widgets.",
+    accent: "#f2542d",
+  },
 ];
 
 // Clients & partners. Each maps to zero or more projects, revealed on hover
@@ -1000,7 +1165,7 @@ export const clients: {
   { name: "UK Government (FCDO)", slugs: ["climate-finance-accelerator"] },
   { name: "DAI", slugs: ["climate-finance-accelerator"] },
   { name: "PwC", slugs: ["climate-finance-accelerator"] },
-  { name: "Ideate Innovation", slugs: ["mmbl", "healthops", "maternal-health-research"] },
+  { name: "Ideate Innovation", slugs: ["mmbl", "healthops", "maternal-health-research", "max"] },
   { name: "NYU ITP", slugs: ["what-she-carried"] },
   { name: "Precision Medicine Lab", slugs: ["biofutures"] },
   { name: "Global Health Foundation", slugs: ["maternal-health-research"] },
