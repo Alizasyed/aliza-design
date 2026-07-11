@@ -68,6 +68,8 @@ export default function Home() {
         </div>
       </section>
 
+      <TrustedBy />
+
       <section id="work" className="mx-auto max-w-6xl px-5 sm:px-8 pt-12 sm:pt-16 pb-20 sm:pb-28 scroll-mt-16">
         <Reveal>
           <div className="flex items-baseline justify-between gap-4 mb-2">
@@ -85,10 +87,6 @@ export default function Home() {
           <div className="border-t hairline" />
         </div>
       </section>
-
-      <div className="border-t hairline">
-        <TrustedBy />
-      </div>
 
       <section className="relative overflow-hidden bg-ink text-paper">
         <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">

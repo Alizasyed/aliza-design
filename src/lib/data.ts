@@ -1175,7 +1175,12 @@ export const clients: {
     logoAspect: 3.59,
   },
   { name: "NYU ITP", slugs: ["what-she-carried"] },
-  { name: "Precision Medicine Lab", slugs: ["biofutures"] },
+  {
+    name: "Precision Medicine Lab",
+    slugs: ["biofutures"],
+    logo: "/logos/precision-medicine-lab.png",
+    logoAspect: 1,
+  },
   { name: "Global Health Foundation", slugs: ["maternal-health-research"] },
   { name: "UNICEF", logo: "/logos/unicef.svg", logoAspect: 4.14 },
   { name: "Fulbright", logo: "/logos/fulbright.svg", logoAspect: 5.34 },

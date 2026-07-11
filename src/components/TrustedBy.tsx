@@ -14,7 +14,7 @@ function ClientMark({ c }: { c: (typeof clients)[number] }) {
       <img
         src={c.logo}
         alt={c.name}
-        className="h-8 w-auto object-contain sm:h-10"
+        className="h-8 w-auto rounded-md object-contain sm:h-10"
         style={{ aspectRatio: c.logoAspect ?? 3 }}
       />
     );
@@ -85,10 +85,14 @@ export function TrustedBy() {
 
   return (
     <section
-      className="group/marquee relative overflow-hidden border-b border-white/10 bg-ink text-paper"
+      className="group/marquee relative overflow-hidden bg-ink text-paper"
       onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY })}
     >
-      <div className="relative mx-auto max-w-6xl py-20 sm:py-28">
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute left-1/2 top-0 h-full w-[70%] -translate-x-1/2 rounded-full bg-[#241640] opacity-40 blur-[130px]" />
+      </div>
+
+      <div className="relative mx-auto max-w-6xl py-16 sm:py-20">
         <div className="flex items-baseline justify-between gap-4 mb-10 px-5 sm:px-8">
           <h2 className="field-label text-paper/50">Trusted by</h2>
           <span className="field-label text-paper/40 hidden sm:block">
