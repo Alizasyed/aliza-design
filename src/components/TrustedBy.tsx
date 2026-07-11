@@ -45,7 +45,7 @@ export function TrustedBy() {
           <>
             <ClientMark c={c} />
             {hasProjects && c.slugs!.length > 1 && (
-              <sup className="ml-1 align-super font-mono text-[0.6em] text-ink-faint">
+              <sup className="ml-1 align-super font-mono text-[0.6em] text-paper/40">
                 {c.slugs!.length}
               </sup>
             )}
@@ -57,7 +57,7 @@ export function TrustedBy() {
             <span
               key={`${key}-${c.name}`}
               tabIndex={key === "b" ? -1 : undefined}
-              className="group/client relative flex items-center text-ink-faint"
+              className="group/client relative flex items-center text-paper/60"
             >
               {content}
             </span>
@@ -74,7 +74,7 @@ export function TrustedBy() {
             onFocus={() => setActiveName(c.name)}
             onBlur={() => setActiveName((n) => (n === c.name ? null : n))}
             style={{ "--proj": first?.accent } as CSSProperties}
-            className="group/client relative flex items-center text-ink-faint transition-colors duration-200 hover:text-[color:var(--proj)] focus-visible:text-[color:var(--proj)] focus-visible:outline-none"
+            className="group/client relative flex items-center text-paper/60 transition-colors duration-200 hover:text-[color:var(--proj)] focus-visible:text-[color:var(--proj)] focus-visible:outline-none"
           >
             {content}
           </Link>
@@ -85,20 +85,22 @@ export function TrustedBy() {
 
   return (
     <section
-      className="group/marquee relative mx-auto max-w-6xl py-20 sm:py-28"
+      className="group/marquee relative overflow-hidden border-b border-white/10 bg-ink text-paper"
       onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY })}
     >
-      <div className="flex items-baseline justify-between gap-4 mb-10 px-5 sm:px-8">
-        <h2 className="field-label text-ink-faint">Trusted by</h2>
-        <span className="field-label text-ink-faint hidden sm:block">
-          Hover to see the work
-        </span>
-      </div>
+      <div className="relative mx-auto max-w-6xl py-20 sm:py-28">
+        <div className="flex items-baseline justify-between gap-4 mb-10 px-5 sm:px-8">
+          <h2 className="field-label text-paper/50">Trusted by</h2>
+          <span className="field-label text-paper/40 hidden sm:block">
+            Hover to see the work
+          </span>
+        </div>
 
-      <div className="marquee-fade overflow-hidden">
-        <div className="marquee-track flex w-max">
-          {track("a")}
-          {track("b")}
+        <div className="marquee-fade overflow-hidden">
+          <div className="marquee-track flex w-max">
+            {track("a")}
+            {track("b")}
+          </div>
         </div>
       </div>
 
@@ -143,7 +145,7 @@ export function TrustedBy() {
                 </div>
               ))}
             </div>
-            <p className="field-label mt-3 text-ink-soft">
+            <p className="field-label mt-3 text-paper/70">
               {projects.length > 1
                 ? `${projects.length} projects with ${client.name}`
                 : projects[0].title}

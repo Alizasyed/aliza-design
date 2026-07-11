@@ -1164,15 +1164,23 @@ export const clients: {
   logo?: string;
   logoAspect?: number;
 }[] = [
-  { name: "MMBL", slugs: ["mmbl"] },
+  { name: "MMBL", slugs: ["mmbl"], logo: "/logos/mmbl.svg", logoAspect: 4.43 },
   { name: "UK Government (FCDO)", slugs: ["climate-finance-accelerator"] },
   { name: "DAI", slugs: ["climate-finance-accelerator"], logo: "/logos/dai.png", logoAspect: 3.6 },
   { name: "PwC", slugs: ["climate-finance-accelerator"] },
-  { name: "Ideate Innovation", slugs: ["mmbl", "healthops", "maternal-health-research", "max"] },
+  {
+    name: "Ideate Innovation",
+    slugs: ["mmbl", "healthops", "maternal-health-research", "max"],
+    logo: "/logos/ideate.svg",
+    logoAspect: 3.59,
+  },
   { name: "NYU ITP", slugs: ["what-she-carried"] },
   { name: "Precision Medicine Lab", slugs: ["biofutures"] },
   { name: "Global Health Foundation", slugs: ["maternal-health-research"] },
-  { name: "UNICEF", logo: "/logos/unicef.svg", logoAspect: 3.6 },
+  { name: "UNICEF", logo: "/logos/unicef.svg", logoAspect: 4.14 },
+  { name: "Fulbright", logo: "/logos/fulbright.svg", logoAspect: 5.34 },
+  { name: "Impetus", logo: "/logos/impetus.svg", logoAspect: 3.31 },
+  { name: "Jack Morton", logo: "/logos/jackmorton.svg", logoAspect: 4.55 },
 ];
 
 export const testimonials: {
