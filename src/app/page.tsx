@@ -127,8 +127,6 @@ export default function Home() {
         </div>
       </section>
 
-      <TrustedBy />
-
       <section className="relative overflow-hidden bg-panel border-t border-b hairline">
         <div className="dot-grid absolute inset-0" aria-hidden />
 
@@ -174,6 +172,8 @@ export default function Home() {
       <div className="border-t hairline">
         <Testimonials />
       </div>
+
+      <TrustedBy />
     </>
   );
 }
