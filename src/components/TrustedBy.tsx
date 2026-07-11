@@ -85,7 +85,7 @@ export function TrustedBy() {
 
   return (
     <section
-      className="group/marquee relative overflow-hidden bg-ink text-paper"
+      className="group/marquee relative overflow-hidden border-t border-white/10 bg-ink text-paper"
       onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY })}
     >
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
