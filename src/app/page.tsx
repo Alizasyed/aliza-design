@@ -133,7 +133,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl px-5 sm:px-8 py-24 sm:py-32">
           <span
             aria-hidden
-            className="ghost-numeral pointer-events-none absolute -top-10 left-0 sm:left-4 text-[clamp(5rem,15vw,11rem)]"
+            className="ghost-numeral pointer-events-none absolute -top-10 left-0 sm:left-4 text-[clamp(5rem,15vw,11rem)] text-ink opacity-[0.05]"
           >
             04
           </span>
