@@ -84,7 +84,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "mmbl",
     index: "01",
-    title: "Designing for a Bank People Stopped Trusting",
+    title: "MMBL Dost App Redesign",
     client: "MMBL (Mobilink Microfinance Bank) × Ideate Innovation",
     tagline: "A ground-up redesign of MMBL's Dost app, grounded in field research with Pakistan's least-served customers.",
     year: "2024–2025",
@@ -359,7 +359,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "healthops",
     index: "02",
-    title: "A Reporting Tool That Tells You What the Numbers Mean",
+    title: "HealthOps Reporting Dashboard",
     client: "HealthOps (under NDA) × Ideate Innovation",
     tagline:
       "A planning platform where every report doesn't just show the numbers. It tells leadership what they mean, and stays current on its own.",
@@ -534,7 +534,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "climate-finance-accelerator",
     index: "03",
-    title: "Launching Pakistan's Climate Finance Accelerator",
+    title: "Climate Finance Accelerator Launch",
     client: "CFA Pakistan (under NDA) × DAI, with PwC & UK Government (FCDO)",
     tagline: "Coordinating government, investors, and businesses behind a national climate finance launch.",
     year: "2026",
@@ -847,7 +847,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "maternal-health-research",
     index: "06",
-    title: "Why Women Stop Taking the Pill",
+    title: "Maternal Health Supplement Research",
     client: "Global Health Foundation (under NDA) × Ideate Innovation",
     tagline:
       "Qualitative research into why low-income pregnant women in Pakistan start, skip, or stop prenatal supplements, and what it means for the products meant to help them.",
@@ -1005,7 +1005,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "max",
     index: "07",
-    title: "Giving Gaming Communities a Home of Their Own",
+    title: "Max: Gaming Community Platform",
     client: "Gaming Engagement Platform (under NDA) × Ideate Innovation",
     tagline: "A no-code page builder and AI-powered analytics platform helping gaming brands turn their Discord communities into interactive, rewarding experiences.",
     year: "2025",
@@ -1177,14 +1177,19 @@ export const clients: {
 
 export const testimonials: {
   quote: string;
+  /** Verbatim substring of `quote` to render in bold, for a stronger scan-read. */
+  highlight?: string;
   name: string;
   role: string;
   company?: string;
   accent: string;
+  linkedin?: string;
+  image?: string;
 }[] = [
   {
     quote:
       "I had the absolute pleasure of managing Aliza at Ideate, and I can confidently say she is as good as they come. As a brilliant Fulbright scholar, Aliza brings a rare blend of sharp intellect and dedication to everything she touches. She is fully engaged across the entire design spectrum: effortlessly moving from user research to product design. What truly sets Aliza apart is how incredibly observant and skillful she is: she catches the subtle nuances others miss and translates them into brilliant user experiences. Any team would be incredibly lucky to have her sharp mind and dedicated work ethic, and I cannot recommend her highly enough.",
+    highlight: "she is as good as they come",
     name: "Umair Abbasi",
     role: "Creative Director & Adjunct Professor of Design",
     company: "Ideate Innovation",
@@ -1193,6 +1198,7 @@ export const testimonials: {
   {
     quote:
       "Aliza consistently demonstrated exceptional creativity and innovation in her designs, playing a pivotal role in revamping our company's brand guidelines. She also led the design of two of our flagship products, showcasing her ability to blend aesthetics with functionality seamlessly.",
+    highlight: "exceptional creativity and innovation",
     name: "Waleed Waseem",
     role: "Founder & CEO",
     company: "Productbox",
@@ -1201,6 +1207,7 @@ export const testimonials: {
   {
     quote:
       "Aliza quickly reached out when my team posted a creative, technical role that we'd had a tough time finding the right talent for. She was a great fit: reliably available, technically savvy, with a designer's eye, and always constructive with the resources available. Looking forward to seeing all that Aliza takes on from here!",
+    highlight: "reliably available, technically savvy, with a designer's eye",
     name: "Sarah Shulman",
     role: "Executive Producer",
     company: "Jack Morton",
@@ -1209,6 +1216,7 @@ export const testimonials: {
   {
     quote:
       "As a colleague, I found Aliza to be dedicated, professional and taking a hands-on approach on the different projects she got to work on. She is a curious and motivated person who's constantly learning and improving her skills. Outside of work, I know Aliza to be a very kind and empathetic person.",
+    highlight: "dedicated, professional and taking a hands-on approach",
     name: "Masna bin Umeed",
     role: "Product Design & Design Systems",
     accent: "#cf3d73",
@@ -1238,6 +1246,8 @@ export const profile = {
   name: "Aliza Habib",
   title: "Senior Product Designer & Communications Lead",
   tagline: "Shaping systems, services, and speculative futures.",
+  /** Portrait shown on the About page sidebar. Falls back to a gradient panel when unset. */
+  photo: undefined as string | undefined,
   location: "Islamabad, Pakistan",
   education: "M.P.S., Interactive Telecommunications Program (ITP), NYU",
   email: "aliza.habib@nyu.edu",

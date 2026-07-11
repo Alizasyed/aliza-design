@@ -76,8 +76,25 @@ export default function About() {
 
         <div className="lg:col-span-4">
           <Reveal>
-            <div className="mb-10 h-40 opacity-70">
-              <HeroMark />
+            <div className="relative mb-10 overflow-hidden border hairline" style={{ aspectRatio: "4 / 5" }}>
+              {profile.photo ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={profile.photo}
+                  alt={profile.name}
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <div className="relative flex h-full w-full items-center justify-center bg-ink">
+                  <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+                    <div className="absolute -left-[20%] -top-[15%] h-[70%] w-[80%] rounded-full bg-[#6a3f8f] opacity-40 blur-[90px]" />
+                    <div className="absolute -bottom-[20%] -right-[10%] h-[60%] w-[70%] rounded-full bg-[#8a3357] opacity-35 blur-[90px]" />
+                  </div>
+                  <div className="relative h-20 w-20 opacity-80">
+                    <HeroMark />
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className="border-t hairline pt-6">

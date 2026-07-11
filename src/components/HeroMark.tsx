@@ -36,7 +36,7 @@ export function HeroMark() {
       aria-hidden
       role="presentation"
     >
-      <g className="text-ink" opacity="0.34" stroke="currentColor" strokeWidth="1.4" fill="none">
+      <g className="text-paper" opacity="0.34" stroke="currentColor" strokeWidth="1.4" fill="none">
         {paths.map((d, i) => (
           <motion.path
             key={i}
@@ -72,7 +72,7 @@ export function HeroMark() {
           cx={n.x}
           cy={n.y}
           r={i === 6 ? 6.5 : i === 3 ? 4 : 3}
-          className={i === 6 ? "fill-accent" : "text-ink"}
+          className={i === 6 ? "fill-accent" : "text-paper"}
           fill={i === 6 ? undefined : "currentColor"}
           opacity={i === 6 ? 1 : i === 3 ? 0.7 : 0.5}
           initial={reduce ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}

@@ -12,15 +12,17 @@ export default function Home() {
       <section className="relative -mt-16 flex min-h-screen w-full flex-col justify-between overflow-hidden bg-ink px-5 pb-8 pt-28 text-paper sm:px-8 sm:pb-10 lg:px-12">
         {/* single moody gradient glow */}
         <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute right-[6%] top-[8%] h-[70%] w-[60%] rounded-full bg-[#c0392b] opacity-[0.32] blur-[150px]" />
-          <div className="absolute right-[24%] top-[26%] h-[45%] w-[40%] rounded-full bg-[#d98324] opacity-25 blur-[130px]" />
-          <div className="absolute -bottom-[12%] left-[2%] h-[55%] w-[45%] rounded-full bg-[#4a2ea8] opacity-30 blur-[150px]" />
+          <div className="absolute right-[6%] top-[8%] h-[70%] w-[60%] rounded-full bg-[#4b2e6b] opacity-[0.38] blur-[150px]" />
+          <div className="absolute right-[24%] top-[26%] h-[45%] w-[40%] rounded-full bg-[#8a3357] opacity-[0.28] blur-[130px]" />
+          <div className="absolute -bottom-[12%] left-[2%] h-[55%] w-[45%] rounded-full bg-[#241640] opacity-[0.45] blur-[150px]" />
         </div>
 
         {/* top: one-line positioning */}
-        <Reveal className="relative">
-          <p className="field-label text-paper/60">{profile.title}</p>
-          <p className="mt-4 max-w-md font-body text-base text-paper/75 leading-relaxed sm:text-lg">
+        <Reveal className="relative max-w-2xl">
+          <p className="font-display text-2xl sm:text-3xl lg:text-4xl leading-snug text-paper text-balance-pretty">
+            {profile.title}
+          </p>
+          <p className="mt-5 max-w-lg font-body text-lg sm:text-xl text-paper/80 leading-relaxed">
             Shaping systems, services, and{" "}
             <span className="italic text-paper">speculative futures</span>, for the people
             existing systems tend to leave out.
@@ -88,37 +90,44 @@ export default function Home() {
         <TrustedBy />
       </div>
 
-      <section className="relative overflow-hidden mx-auto max-w-6xl px-5 sm:px-8 pb-20 sm:pb-28">
-        <span
-          aria-hidden
-          className="ghost-numeral pointer-events-none absolute -top-6 right-0 sm:right-4 text-[clamp(6rem,18vw,13rem)]"
-        >
-          03
-        </span>
+      <section className="relative overflow-hidden bg-ink text-paper">
+        <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute -left-[10%] top-[-20%] h-[75%] w-[55%] rounded-full bg-[#241640] opacity-[0.55] blur-[140px]" />
+          <div className="absolute right-[4%] bottom-[-25%] h-[65%] w-[45%] rounded-full bg-[#6a3f8f] opacity-[0.3] blur-[140px]" />
+        </div>
 
-        <div className="relative max-w-2xl">
-          <Reveal>
-            <h2 className="field-label text-ink-faint mb-6">Philosophy</h2>
-            <p className="font-display text-2xl sm:text-3xl leading-snug text-balance-pretty">
-              Design that treats comprehension, trust, and access as constraints,
-              not features to add later.
-            </p>
-          </Reveal>
+        <div className="relative mx-auto max-w-6xl px-5 sm:px-8 py-24 sm:py-32">
+          <span
+            aria-hidden
+            className="ghost-numeral pointer-events-none absolute -top-6 right-0 sm:right-4 text-[clamp(6rem,18vw,13rem)] text-paper opacity-[0.06]"
+          >
+            03
+          </span>
 
-          <Reveal delay={0.15} className="mt-10">
-            <Link
-              href="/about"
-              className="group inline-flex items-baseline gap-3 font-body text-xl sm:text-2xl border-b border-ink pb-1 hover:text-accent hover:border-accent transition-colors duration-200"
-            >
-              More about Aliza
-              <span
-                aria-hidden
-                className="font-mono text-sm transition-transform duration-200 group-hover:translate-x-1"
+          <div className="relative max-w-2xl">
+            <Reveal>
+              <h2 className="field-label text-paper/50 mb-6">Philosophy</h2>
+              <p className="font-display text-2xl sm:text-3xl leading-snug text-balance-pretty">
+                Design that treats comprehension, trust, and access as constraints,
+                not features to add later.
+              </p>
+            </Reveal>
+
+            <Reveal delay={0.15} className="mt-10">
+              <Link
+                href="/about"
+                className="group inline-flex items-baseline gap-3 font-body text-xl sm:text-2xl border-b border-paper/40 pb-1 text-paper hover:text-paper/70 hover:border-paper/70 transition-colors duration-200"
               >
-                &rarr;
-              </span>
-            </Link>
-          </Reveal>
+                More about Aliza
+                <span
+                  aria-hidden
+                  className="font-mono text-sm transition-transform duration-200 group-hover:translate-x-1"
+                >
+                  &rarr;
+                </span>
+              </Link>
+            </Reveal>
+          </div>
         </div>
       </section>
 
@@ -138,17 +147,25 @@ export default function Home() {
               <h2 className="field-label text-ink-faint mb-10">What Aliza Does</h2>
             </Reveal>
 
-            <RevealGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
-              {services.map((service) => (
-                <RevealItem key={service.tag} className="border-t hairline pt-6">
-                  <h3 className="field-label text-ink mb-4">{service.tag}</h3>
-                  <ul className="space-y-2">
+            <RevealGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+              {services.map((service, i) => (
+                <RevealItem key={service.tag} className="border-t-2 border-ink pt-6">
+                  <span className="field-label text-ink-faint">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="font-display text-2xl sm:text-[1.75rem] leading-tight mt-3 mb-5 text-balance-pretty">
+                    {service.tag}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
                     {service.items.map((item) => (
-                      <li key={item} className="font-body text-ink-soft">
+                      <span
+                        key={item}
+                        className="field-label rounded-full border border-line px-3 py-1.5 text-ink-soft"
+                      >
                         {item}
-                      </li>
+                      </span>
                     ))}
-                  </ul>
+                  </div>
                 </RevealItem>
               ))}
             </RevealGroup>

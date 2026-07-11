@@ -46,22 +46,22 @@ export function Nav() {
         overHero ? "bg-transparent" : "border-b hairline bg-paper/90 backdrop-blur-sm"
       }`}
     >
-      <div className="mx-auto max-w-6xl px-5 sm:px-8 h-16 flex items-center justify-between">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 h-16 lg:h-20 flex items-center justify-between">
         <Link
           href="/"
-          className={`field-label transition-colors duration-200 ${
+          className={`font-mono uppercase tracking-[0.1em] text-sm lg:text-base transition-colors duration-200 ${
             overHero ? "text-paper hover:text-paper/70" : "text-ink hover:text-accent"
           }`}
         >
           Aliza Habib
         </Link>
 
-        <nav className="hidden sm:flex items-center gap-8">
+        <nav className="hidden sm:flex items-center gap-8 lg:gap-12">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className={`group/navlink field-label relative transition-colors duration-200 ${
+              className={`group/navlink font-mono uppercase tracking-[0.14em] text-sm lg:text-base relative transition-colors duration-200 ${
                 overHero ? "text-paper/70 hover:text-paper" : "text-ink-soft hover:text-ink"
               }`}
             >
