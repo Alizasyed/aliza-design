@@ -1166,7 +1166,7 @@ export const clients: {
 }[] = [
   { name: "MMBL", slugs: ["mmbl"], logo: "/logos/mmbl.svg", logoAspect: 4.43 },
   { name: "UK Government (FCDO)", slugs: ["climate-finance-accelerator"] },
-  { name: "DAI", slugs: ["climate-finance-accelerator"], logo: "/logos/dai.png", logoAspect: 3.6 },
+  { name: "DAI", slugs: ["climate-finance-accelerator"], logo: "/logos/dai.svg", logoAspect: 4.09 },
   { name: "PwC", slugs: ["climate-finance-accelerator"] },
   {
     name: "Ideate Innovation",

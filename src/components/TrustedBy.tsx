@@ -10,12 +10,21 @@ import { ProjectVisual } from "@/components/ProjectVisual";
 function ClientMark({ c }: { c: (typeof clients)[number] }) {
   if (c.logo) {
     return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        src={c.logo}
-        alt={c.name}
-        className="h-8 w-auto rounded-md object-contain sm:h-10"
-        style={{ aspectRatio: c.logoAspect ?? 3 }}
+      <span
+        role="img"
+        aria-label={c.name}
+        className="inline-block h-8 bg-current sm:h-10"
+        style={{
+          aspectRatio: c.logoAspect ?? 3,
+          maskImage: `url(${c.logo})`,
+          WebkitMaskImage: `url(${c.logo})`,
+          maskSize: "contain",
+          WebkitMaskSize: "contain",
+          maskRepeat: "no-repeat",
+          WebkitMaskRepeat: "no-repeat",
+          maskPosition: "left center",
+          WebkitMaskPosition: "left center",
+        }}
       />
     );
   }
