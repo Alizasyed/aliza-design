@@ -1191,12 +1191,14 @@ export const caseStudies: CaseStudy[] = [
 // wordmarks (rest colour at rest, project accent on hover) rather than
 // showing the brand's own colour. `logoAspect` (width / height) sizes the
 // mask box; when `logo` is absent the client's name is rendered as a
-// wordmark instead.
+// wordmark instead. `tags` are shown on hover for clients with no linked
+// case study, as a quick gloss on the nature of the work.
 export const clients: {
   name: string;
   slugs?: string[];
   logo?: string;
   logoAspect?: number;
+  tags?: string[];
 }[] = [
   { name: "MMBL", slugs: ["mmbl"], logo: "/logos/mmbl.svg", logoAspect: 4.43 },
   { name: "UK Government (FCDO)", slugs: ["climate-finance-accelerator"] },
@@ -1216,10 +1218,30 @@ export const clients: {
     logoAspect: 1,
   },
   { name: "Global Health Foundation", slugs: ["maternal-health-research"] },
-  { name: "UNICEF", logo: "/logos/unicef.svg", logoAspect: 4.14 },
-  { name: "Fulbright", logo: "/logos/fulbright.svg", logoAspect: 5.34 },
-  { name: "Impetus", logo: "/logos/impetus.svg", logoAspect: 3.31 },
-  { name: "Jack Morton", logo: "/logos/jackmorton.svg", logoAspect: 4.55 },
+  {
+    name: "UNICEF",
+    logo: "/logos/unicef.svg",
+    logoAspect: 4.14,
+    tags: ["Health Service Design", "Research"],
+  },
+  {
+    name: "Fulbright",
+    logo: "/logos/fulbright.svg",
+    logoAspect: 5.34,
+    tags: ["Mentoring"],
+  },
+  {
+    name: "Impetus",
+    logo: "/logos/impetus.svg",
+    logoAspect: 3.31,
+    tags: ["Web Design", "Web Development"],
+  },
+  {
+    name: "Jack Morton",
+    logo: "/logos/jackmorton.svg",
+    logoAspect: 4.55,
+    tags: ["Web Development", "Production Design"],
+  },
 ];
 
 export const testimonials: {

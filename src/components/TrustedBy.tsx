@@ -66,9 +66,22 @@ export function TrustedBy() {
             <span
               key={`${key}-${c.name}`}
               tabIndex={key === "b" ? -1 : undefined}
-              className="group/client relative flex items-center text-paper/60"
+              className="group/client relative flex items-center text-paper/60 transition-colors duration-200 hover:text-paper focus-visible:text-paper focus-visible:outline-none"
             >
               {content}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -top-9 left-1/2 flex -translate-x-1/2 flex-wrap justify-center gap-1.5 opacity-0 transition-opacity duration-200 group-hover/client:opacity-100"
+              >
+                {(c.tags ?? ["No case study yet"]).map((tag) => (
+                  <span
+                    key={tag}
+                    className="field-label whitespace-nowrap rounded-full bg-paper px-2.5 py-1 text-ink"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </span>
             </span>
           );
         }
@@ -109,7 +122,7 @@ export function TrustedBy() {
           </span>
         </div>
 
-        <div className="marquee-fade overflow-hidden">
+        <div className="marquee-fade overflow-x-hidden py-9">
           <div className="marquee-track flex w-max">
             {track("a")}
             {track("b")}
