@@ -1217,7 +1217,6 @@ export const clients: {
     logo: "/logos/precision-medicine-lab.png",
     logoAspect: 1,
   },
-  { name: "Global Health Foundation", slugs: ["maternal-health-research"] },
   {
     name: "UNICEF",
     logo: "/logos/unicef.svg",

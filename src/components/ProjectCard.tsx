@@ -53,30 +53,29 @@ export function ProjectCard({ project }: { project: CaseStudy }) {
           {project.index}
         </div>
 
-        <div className="sm:col-span-6 min-w-0">
+        <div className="sm:col-span-7 min-w-0">
           <h3 className="font-display text-2xl sm:text-3xl leading-tight text-balance-pretty transition-colors duration-200 group-hover:text-[color:var(--proj)]">
             {project.title}
           </h3>
           <p className="field-label text-ink-faint mt-3">{project.client}</p>
+          <div className="mt-3 flex flex-wrap items-center gap-1.5">
+            <span className="field-label rounded-full border border-[color:var(--proj)]/40 px-1.5 py-0.5 text-[0.625rem] text-[color:var(--proj)]">
+              {project.sector}
+            </span>
+            <span className="field-label text-[0.625rem] text-ink-faint">{project.year}</span>
+          </div>
         </div>
 
-        <div className="sm:col-span-3 flex flex-wrap items-center gap-1.5 sm:gap-2">
-          <span className="field-label rounded-full border border-[color:var(--proj)]/40 px-2 py-0.5 text-[color:var(--proj)] sm:px-2.5 sm:py-1">
-            {project.sector}
-          </span>
-          <span className="field-label text-ink-faint">{project.year}</span>
-        </div>
-
-        <div className="sm:col-span-2 flex sm:justify-end">
+        <div className="sm:col-span-4 flex sm:justify-end">
           <ProjectVisual
             image={project.image}
             alt={project.imageAlt}
             slug={project.slug}
             accent={project.accent}
             vivid={project.vivid}
-            sizes="128px"
-            markClassName="bottom-1.5 right-1.5 h-7 w-7"
-            className="h-20 w-32 border hairline"
+            sizes="224px"
+            markClassName="bottom-2 right-2 h-9 w-9"
+            className="h-32 w-56 border hairline"
           />
         </div>
       </div>

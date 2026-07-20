@@ -12,9 +12,9 @@ export default function Home() {
       <section className="relative -mt-16 flex min-h-screen w-full flex-col justify-between overflow-hidden bg-ink px-5 pb-8 pt-28 text-paper sm:px-8 sm:pb-10 lg:px-12">
         {/* single moody gradient glow */}
         <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute right-[6%] top-[8%] h-[70%] w-[60%] rounded-full bg-[#4b2e6b] opacity-[0.38] blur-[150px]" />
-          <div className="absolute right-[24%] top-[26%] h-[45%] w-[40%] rounded-full bg-[#8a3357] opacity-[0.28] blur-[130px]" />
-          <div className="absolute -bottom-[12%] left-[2%] h-[55%] w-[45%] rounded-full bg-[#241640] opacity-[0.45] blur-[150px]" />
+          <div className="absolute right-[6%] top-[8%] h-[70%] w-[60%] rounded-full bg-[#0f5c46] opacity-[0.38] blur-[150px]" />
+          <div className="absolute right-[24%] top-[26%] h-[45%] w-[40%] rounded-full bg-[#004437] opacity-[0.32] blur-[130px]" />
+          <div className="absolute -bottom-[12%] left-[2%] h-[55%] w-[45%] rounded-full bg-[#012b22] opacity-[0.5] blur-[150px]" />
         </div>
 
         {/* top: one-line positioning */}
@@ -24,7 +24,7 @@ export default function Home() {
           </p>
           <p className="mt-5 max-w-lg font-body text-lg sm:text-xl text-paper/80 leading-relaxed">
             Shaping systems, services, and{" "}
-            <span className="italic text-paper">speculative futures</span>, for the people
+            <span className="italic text-[#d5b38e]">speculative futures</span>, for the people
             existing systems tend to leave out.
           </p>
         </Reveal>
@@ -34,7 +34,7 @@ export default function Home() {
           <HeroName className="font-display text-[clamp(3.75rem,15vw,12rem)] leading-[0.86] text-paper" />
 
           <Reveal delay={0.9}>
-            <div className="mt-8 flex flex-wrap items-center justify-between gap-x-8 gap-y-4 border-t border-white/15 pt-6">
+            <div className="mt-8 flex flex-wrap items-center justify-between gap-x-8 gap-y-4 border-t border-[#d5b38e]/25 pt-6">
               <p className="field-label text-paper/50">
                 {profile.location}
                 {" "}&middot; Available for select work
@@ -58,7 +58,7 @@ export default function Home() {
                 </a>
                 <Link
                   href="#work"
-                  className="field-label text-paper transition-colors duration-200 hover:text-paper/70"
+                  className="field-label text-[#d5b38e] transition-colors duration-200 hover:text-paper"
                 >
                   Selected work &darr;
                 </Link>
