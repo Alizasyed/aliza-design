@@ -96,7 +96,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Mobilink Microfinance is one of Pakistan's largest digital banks, but a wave of negative feedback was pointing at something a new feature couldn't fix. People didn't trust the app, and a large part of the user base couldn't really use it. Many of these customers have low digital literacy, low vision, or low numeracy, and some are using a banking app for the first time.",
     problem:
-      "MMBL's brief asked for a redesign, but the negative feedback pointed somewhere deeper. It wasn't about adding to the app. It was about making it clear, usable, and trustworthy for the people who find banking hardest, at the exact moments where money was on the line.",
+      "MMBL's brief asked for a redesign, but the negative feedback pointed somewhere deeper: the app needed to be clear, usable, and trustworthy for the people who find banking hardest, at the exact moments where money was on the line.",
     pullQuote: "The brief needed a redesign. The real job was to make people trust it and use it.",
     approach: [
       "Start in the field, not in Figma: a heuristic audit, stakeholder interviews, and 20 hours with customers surfaced the real problems, then rebuild the conventional app around trust and access.",
@@ -375,7 +375,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "HealthOps is a national healthcare planning platform. The screens here are a few of the views designed across it. The full system runs much wider, all built on one shared design system and handed off in Figma.",
     problem:
-      "The brief asked for a reporting tool, but the team already had reports. What they didn't have was a way to tell what any of it meant, or what to do with them. Exports were accurate the day they ran and out of date soon after, and none of them got a planner closer to a decision. So the work was less about building reports and more about making the data explain itself, so someone who isn't an analyst can look at a screen and know what's going on and what needs attention.",
+      "HealthOps already had reports. Exports were accurate the day they ran and out of date soon after, and none of them got a planner closer to a decision. The job was to make the data explain itself: build screens someone who isn't an analyst can read at a glance, understand what's going on, and see what needs attention.",
     pullQuote:
       "Exports were accurate the day they ran, and out of date by the time anyone read them.",
     approach: [
@@ -1050,7 +1050,7 @@ export const caseStudies: CaseStudy[] = [
       "Gaming brands build huge, active communities on Discord, but Discord itself gives them no ownable space to showcase a brand, run rewards, or actually see who their best fans are. This product lets a brand spin up a branded, interactive page connected to that community in minutes, then shows them what's happening inside it.",
     problem:
       "A brand's community already exists. What it doesn't have is a home: somewhere to bring a 3D item drop, a live chat, a poll, and a rewards balance together under its own look and feel, without engineering effort. And once that page exists, the brand still can't answer a basic question: which fans actually matter, and what should we do for them next?",
-    pullQuote: "Gaming brands already have their community. What they don't have is a place to reward it.",
+    pullQuote: "This product gives a gaming brand's existing community a place built to reward it.",
     approach: [
       "Mapped the flow end to end: connect a Discord server, brand a page in minutes, build it from templates or from scratch, then read what the audience does on it.",
       "Designed a widget-based creation system (3D interaction, live chat, polls, rewards) that reskins cleanly across light and dark, so one page structure works for very different brand identities.",
