@@ -330,7 +330,9 @@ export function CaseStudyDetails({ project }: { project: CaseStudy }) {
                       : section.media.images.length >= 4
                         ? "media-wide grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6"
                         : section.media.images.length > 1
-                          ? "grid grid-cols-2 gap-4 sm:gap-6"
+                          ? section.media.images.every((img) => img.h > img.w)
+                            ? "grid grid-cols-2 gap-4 sm:gap-6 max-w-md mx-auto"
+                            : "grid grid-cols-2 gap-4 sm:gap-6"
                           : section.media.images[0].full
                             ? "media-full"
                             : section.media.images[0].h > section.media.images[0].w
