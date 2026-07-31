@@ -1382,81 +1382,6 @@ export const caseStudies: CaseStudy[] = [
     accent: "#1f7a4d",
   },
   {
-    slug: "blockbytes",
-    index: "09",
-    title: "BlockBytes Capital Web Redesign",
-    client: "BlockBytes Capital × Ideate Innovation",
-    tagline: "A dynamic new web presence for a digital asset firm, built to make complex crypto products legible to serious investors.",
-    year: "2025",
-    sector: "Crypto / Digital Asset Management",
-    role: "Design & Project Lead",
-    type: "UI/UX design & Webflow development",
-    summary:
-      "BlockBytes Capital manages data-driven crypto portfolios and multi-layered financial products for high-value clients. Their existing Squarespace site undersold all of it: a static design that didn't inspire confidence, product explanations too dense to skim, and no clear next step for an interested investor to take.",
-    problem:
-      "A firm asking serious investors to trust it with digital assets needs a site that reads as credible on sight, and that can make multi-layered financial products (different risk levels, different time horizons) understandable without a call. The old site had none of that: no clear structure, no motion, no path from visiting to booking a demo.",
-    pullQuote: "The feedback from our customers has been amazing, they LOVE IT. This is a HUGEEE UPGRADE!",
-    pullQuoteAttribution: "Ozzy, BlockBytes Capital",
-    approach: [
-      "Built a lean sitemap around four jobs: establish credibility (About), explain the offering (Services/Funds), provide proof (Blog/Musings), and drive action (Contact).",
-      "Chose Webflow specifically for its interaction engine, using motion to guide attention through dense financial content instead of relying on longer copy.",
-      "Started concepts in a bolder purple gradient, then pivoted with the client to a restrained dark, neutral-grey palette that better matched a firm managing other people's money.",
-    ],
-    outcome:
-      "A polished, motion-driven site that replaced a static Squarespace page with a credible, navigable home for BlockBytes' fund lineup, built and launched end-to-end in Webflow.",
-    metrics: [
-      { label: "Timeline", value: "2 months" },
-      { label: "Fund strategies documented", value: "2" },
-      { label: "Core site sections", value: "4" },
-    ],
-    tools: "Figma · Webflow",
-    sections: [
-      {
-        heading: "From a static Squarespace page to a firm that looks the part",
-        body: "The old site was a single long Squarespace scroll: dense paragraphs, stock chart imagery, and no real hierarchy between a casual visitor and a serious lead. The redesign opens with the firm's name treated like a wordmark, one line of positioning, and a clear path into the fund lineup.",
-        media: {
-          images: [
-            {
-              src: "/work/blockbytes/ui-before.jpg",
-              alt: "The previous BlockBytes Capital Squarespace site: dense paragraphs of text over a cream background with candlestick and volume charts.",
-              label: "Before",
-              w: 1530,
-              h: 1250,
-            },
-            {
-              src: "/work/blockbytes/ui-hero.jpg",
-              alt: "The redesigned BlockBytes Capital homepage: a dark hero with a pixel-art wordmark, an isometric diamond graphic, and the line 'Building Your Future, One Block At a Time.'",
-              label: "After",
-              w: 3270,
-              h: 1670,
-            },
-          ],
-          contain: true,
-          caption: "Same firm, same funds. The redesign gives it a hierarchy, a wordmark, and somewhere to look confident.",
-        },
-      },
-      {
-        heading: "Two funds, explained on their own terms",
-        body: "BlockBytes runs multiple strategies at different risk levels. Rather than one page listing them as bullet points, each fund gets its own numbered section, an isometric block mark, and a plain-language read on who it's for.",
-        media: {
-          images: [
-            {
-              src: "/work/blockbytes/ui-fund-pages.jpg",
-              alt: "BlockBuild and BlockTuned fund sections, each with a numbered heading, a one-line risk profile, and an isometric line-art block icon.",
-              w: 3270,
-              h: 1935,
-              full: true,
-            },
-          ],
-          caption: "Each tagline states the fund's risk profile in four words, before a reader gets to the paragraph below it.",
-        },
-      },
-    ],
-    image: "/work/blockbytes/ui-hero.jpg",
-    imageAlt: "The redesigned BlockBytes Capital homepage with a pixel-art wordmark and isometric diamond graphic on a dark background.",
-    accent: "#4c2889",
-  },
-  {
     slug: "impetus",
     index: "10",
     title: "Impetus Advisory Group Website",
@@ -1526,6 +1451,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     image: "/work/impetus/ui-homepage.png",
     imageAlt: "The Impetus Advisory Group homepage with Finance & Economy selected, showing the headline and three matching Insights articles.",
+    coverVideo: "/work/impetus/cover.mp4",
     accent: "#7a3226",
   },
 ];
@@ -1588,7 +1514,6 @@ export const clients: {
     tags: ["Web Development", "Production Design"],
   },
   { name: "Flyve", slugs: ["flyve"] },
-  { name: "BlockBytes Capital", slugs: ["blockbytes"] },
 ];
 
 export const testimonials: {

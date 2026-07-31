@@ -19,14 +19,14 @@ export function ProjectGridCard({ project }: { project: CaseStudy }) {
           src={project.coverVideo}
           slug={project.slug}
           markClassName="bottom-3 right-3 h-8 w-8 sm:bottom-4 sm:right-4 sm:h-10 sm:w-10"
-          className="aspect-[4/3] border hairline"
+          className="aspect-[3/2] border hairline"
         />
       ) : project.coverAnimation ? (
         <LottieCover
           src={project.coverAnimation}
           slug={project.slug}
           markClassName="bottom-3 right-3 h-8 w-8 sm:bottom-4 sm:right-4 sm:h-10 sm:w-10"
-          className="aspect-[4/3] border hairline"
+          className="aspect-[3/2] border hairline"
         />
       ) : (
         <ProjectVisual
@@ -37,7 +37,7 @@ export function ProjectGridCard({ project }: { project: CaseStudy }) {
           vivid={project.vivid}
           sizes="(min-width: 640px) 50vw, 100vw"
           markClassName="bottom-3 right-3 h-8 w-8 sm:bottom-4 sm:right-4 sm:h-10 sm:w-10"
-          className="aspect-[4/3] border hairline"
+          className="aspect-[3/2] border hairline"
         />
       )}
 

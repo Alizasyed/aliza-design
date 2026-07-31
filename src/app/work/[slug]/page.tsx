@@ -105,7 +105,7 @@ export default async function CaseStudyPage({
               src={project.coverVideo}
               slug={project.slug}
               markClassName="top-5 right-5 h-16 w-16 sm:top-7 sm:right-7 sm:h-24 sm:w-24"
-              className="relative aspect-[16/9] sm:aspect-[16/7] border hairline"
+              className="relative aspect-[3/2] border hairline"
             >
               <span className="field-label absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-10 bg-paper/85 px-2 py-1 text-ink-faint">
                 Fig. {project.index} &middot; {project.sector}
@@ -116,7 +116,7 @@ export default async function CaseStudyPage({
               src={project.coverAnimation}
               slug={project.slug}
               markClassName="top-5 right-5 h-16 w-16 sm:top-7 sm:right-7 sm:h-24 sm:w-24"
-              className="relative aspect-[16/9] sm:aspect-[16/7] border hairline"
+              className="relative aspect-[3/2] border hairline"
             >
               <span className="field-label absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-10 bg-paper/85 px-2 py-1 text-ink-faint">
                 Fig. {project.index} &middot; {project.sector}
@@ -132,7 +132,7 @@ export default async function CaseStudyPage({
               eager
               sizes="(min-width: 1152px) 1088px, 100vw"
               markClassName="top-5 right-5 h-16 w-16 sm:top-7 sm:right-7 sm:h-24 sm:w-24"
-              className="relative aspect-[16/9] sm:aspect-[16/7] border hairline"
+              className="relative aspect-[3/2] border hairline"
             >
               <span className="field-label absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-10 bg-paper/85 px-2 py-1 text-ink-faint">
                 Fig. {project.index} &middot; {project.sector}
