@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import type { CSSProperties } from "react";
 import type { CaseStudy } from "@/lib/data";
 import { ProjectVisual } from "@/components/ProjectVisual";
+import { LottieCover } from "@/components/LottieCover";
 
 export function ProjectCard({ project }: { project: CaseStudy }) {
   const [hovered, setHovered] = useState(false);
@@ -67,16 +68,25 @@ export function ProjectCard({ project }: { project: CaseStudy }) {
         </div>
 
         <div className="sm:col-span-4 flex sm:justify-end">
-          <ProjectVisual
-            image={project.image}
-            alt={project.imageAlt}
-            slug={project.slug}
-            accent={project.accent}
-            vivid={project.vivid}
-            sizes="224px"
-            markClassName="bottom-2 right-2 h-9 w-9"
-            className="h-32 w-56 border hairline"
-          />
+          {project.coverAnimation ? (
+            <LottieCover
+              src={project.coverAnimation}
+              slug={project.slug}
+              markClassName="bottom-2 right-2 h-9 w-9"
+              className="h-32 w-56 border hairline"
+            />
+          ) : (
+            <ProjectVisual
+              image={project.image}
+              alt={project.imageAlt}
+              slug={project.slug}
+              accent={project.accent}
+              vivid={project.vivid}
+              sizes="224px"
+              markClassName="bottom-2 right-2 h-9 w-9"
+              className="h-32 w-56 border hairline"
+            />
+          )}
         </div>
       </div>
     </Link>

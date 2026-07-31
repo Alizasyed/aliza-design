@@ -4,6 +4,8 @@ import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import { caseStudies } from "@/lib/data";
 import { ProjectVisual } from "@/components/ProjectVisual";
+import { LottieCover } from "@/components/LottieCover";
+import { VideoCover } from "@/components/VideoCover";
 import { Reveal } from "@/components/Reveal";
 import { SplitHeadline } from "@/components/SplitHeadline";
 import { ScrollProgress } from "@/components/ScrollProgress";
@@ -98,21 +100,45 @@ export default async function CaseStudyPage({
 
       <Reveal>
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <ProjectVisual
-            image={project.image}
-            alt={project.imageAlt}
-            slug={project.slug}
-            accent={project.accent}
-            vivid={project.vivid}
-            eager
-            sizes="(min-width: 1152px) 1088px, 100vw"
-            markClassName="top-5 right-5 h-16 w-16 sm:top-7 sm:right-7 sm:h-24 sm:w-24"
-            className="relative aspect-[16/9] sm:aspect-[16/7] border hairline"
-          >
-            <span className="field-label absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-10 bg-paper/85 px-2 py-1 text-ink-faint">
-              Fig. {project.index} &middot; {project.sector}
-            </span>
-          </ProjectVisual>
+          {project.coverVideo ? (
+            <VideoCover
+              src={project.coverVideo}
+              slug={project.slug}
+              markClassName="top-5 right-5 h-16 w-16 sm:top-7 sm:right-7 sm:h-24 sm:w-24"
+              className="relative aspect-[16/9] sm:aspect-[16/7] border hairline"
+            >
+              <span className="field-label absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-10 bg-paper/85 px-2 py-1 text-ink-faint">
+                Fig. {project.index} &middot; {project.sector}
+              </span>
+            </VideoCover>
+          ) : project.coverAnimation ? (
+            <LottieCover
+              src={project.coverAnimation}
+              slug={project.slug}
+              markClassName="top-5 right-5 h-16 w-16 sm:top-7 sm:right-7 sm:h-24 sm:w-24"
+              className="relative aspect-[16/9] sm:aspect-[16/7] border hairline"
+            >
+              <span className="field-label absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-10 bg-paper/85 px-2 py-1 text-ink-faint">
+                Fig. {project.index} &middot; {project.sector}
+              </span>
+            </LottieCover>
+          ) : (
+            <ProjectVisual
+              image={project.image}
+              alt={project.imageAlt}
+              slug={project.slug}
+              accent={project.accent}
+              vivid={project.vivid}
+              eager
+              sizes="(min-width: 1152px) 1088px, 100vw"
+              markClassName="top-5 right-5 h-16 w-16 sm:top-7 sm:right-7 sm:h-24 sm:w-24"
+              className="relative aspect-[16/9] sm:aspect-[16/7] border hairline"
+            >
+              <span className="field-label absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-10 bg-paper/85 px-2 py-1 text-ink-faint">
+                Fig. {project.index} &middot; {project.sector}
+              </span>
+            </ProjectVisual>
+          )}
         </div>
       </Reveal>
 
@@ -147,16 +173,32 @@ export default async function CaseStudyPage({
           className="group mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 sm:px-8 py-14 sm:py-20"
         >
           <div className="flex items-center gap-6 sm:gap-8 min-w-0">
-            <ProjectVisual
-              image={next.image}
-              alt={next.imageAlt}
-              slug={next.slug}
-              accent={next.accent}
-              vivid={next.vivid}
-              sizes="96px"
-              markClassName="bottom-1.5 right-1.5 h-6 w-6"
-              className="hidden sm:block h-16 w-24 shrink-0 border hairline"
-            />
+            {next.coverVideo ? (
+              <VideoCover
+                src={next.coverVideo}
+                slug={next.slug}
+                markClassName="bottom-1.5 right-1.5 h-6 w-6"
+                className="hidden sm:block h-16 w-24 shrink-0 border hairline"
+              />
+            ) : next.coverAnimation ? (
+              <LottieCover
+                src={next.coverAnimation}
+                slug={next.slug}
+                markClassName="bottom-1.5 right-1.5 h-6 w-6"
+                className="hidden sm:block h-16 w-24 shrink-0 border hairline"
+              />
+            ) : (
+              <ProjectVisual
+                image={next.image}
+                alt={next.imageAlt}
+                slug={next.slug}
+                accent={next.accent}
+                vivid={next.vivid}
+                sizes="96px"
+                markClassName="bottom-1.5 right-1.5 h-6 w-6"
+                className="hidden sm:block h-16 w-24 shrink-0 border hairline"
+              />
+            )}
             <div className="min-w-0">
               <p className="field-label text-ink-faint mb-4">Next Project</p>
               <p className="font-display text-2xl sm:text-4xl transition-colors duration-200 text-balance-pretty group-hover:text-[color:var(--proj)]">

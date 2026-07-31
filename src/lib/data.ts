@@ -13,6 +13,8 @@ export type CaseStudy = {
   pullQuote?: string;
   pullQuoteAttribution?: string;
   approach: string[];
+  /** How `approach` renders. Defaults to numbered cards; "timeline" is a connected vertical sequence for genuinely ordered steps. */
+  approachLayout?: "cards" | "timeline";
   outcome: string;
   metrics?: { label: string; value: string }[];
   tools?: string;
@@ -24,6 +26,10 @@ export type CaseStudy = {
     heading: string;
     body?: string;
     items?: string[];
+    /** How `items` renders. Defaults to plain bordered cards; "findings" is the same card but pulls a leading "Label: " prefix out as a styled lead-in; "tags" is a wrapped pill row for short labels; "comparison" splits exactly two items into side-by-side panels. */
+    itemsLayout?: "cards" | "findings" | "tags" | "comparison";
+    /** A real colour palette: swatch + hex + description, instead of describing colours as prose bullets. Renders in place of `items`. */
+    swatches?: { name: string; hex: string; description: string }[];
     /**
      * Numbered callouts tying a specific point on the screenshot to an
      * explanation and the design-pattern/heuristic it follows: renders as
@@ -73,6 +79,10 @@ export type CaseStudy = {
   imageAlt: string;
   /** Cover is already a finished graphic (illustration/diagram): skip the grayscale + duotone photo treatment. */
   vivid?: boolean;
+  /** Path to a Lottie JSON animation to play as the case-study page's cover instead of the static `image`. */
+  coverAnimation?: string;
+  /** Path to a muted looping video (mp4) to play as the cover. Takes priority over `coverAnimation` when both are set. */
+  coverVideo?: string;
   /** Signature colour for this project: drives its duotone, mark, and case page. */
   accent: string;
   nda?: boolean;
@@ -102,6 +112,7 @@ export const caseStudies: CaseStudy[] = [
       "Start in the field, not in Figma: a heuristic audit, stakeholder interviews, and 20 hours with customers surfaced the real problems, then rebuild the conventional app around trust and access.",
       "Then extend the same tested foundation into a full Sharia-compliant experience, without forking the product.",
     ],
+    approachLayout: "timeline",
     outcome:
       "A banking product that treats comprehension as a core design constraint, not an accessibility afterthought, built for the customer MMBL actually serves, across both conventional and Islamic banking, and grounded in research the team could point back to for every decision.",
     metrics: [
@@ -119,6 +130,7 @@ export const caseStudies: CaseStudy[] = [
           "Trust & technical issues: slow OTPs, crashes, and unclear errors eroded trust and pushed users toward competitor apps.",
           "Demand for new tools: strong appetite for digitised loan management, repayment calculators, installment reminders, and transparent fees.",
         ],
+        itemsLayout: "findings",
         media: {
           images: [
             {
@@ -164,11 +176,11 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: "Accessibility, proven",
         body: "Accessibility was a constraint we tested against, not a checkbox after the fact. Every colour pairing was checked for WCAG contrast and assigned a role: high-contrast shades for text and buttons, softer hues for gradients and surfaces.",
-        items: [
-          "Terra Red #C24D4D: grounded and dependable, for financial confidence.",
-          "Auburn #A02626: a bold, inviting red that encourages action.",
-          "Deep Cosmos #5A1919: a warm brown-red adding depth and reliability.",
-          "Saffron Gold #E6B93D: an optimistic gold for growth and success.",
+        swatches: [
+          { name: "Terra Red", hex: "#C24D4D", description: "Grounded and dependable, for financial confidence." },
+          { name: "Auburn", hex: "#A02626", description: "A bold, inviting red that encourages action." },
+          { name: "Deep Cosmos", hex: "#5A1919", description: "A warm brown-red adding depth and reliability." },
+          { name: "Saffron Gold", hex: "#E6B93D", description: "An optimistic gold for growth and success." },
         ],
         media: {
           images: [
@@ -244,12 +256,46 @@ export const caseStudies: CaseStudy[] = [
         },
       },
       {
+        heading: "The shipped UI kit",
+        body: "The new UI kit shipped across all ten user journeys, not just the ones tested above: home, account opening, transfers, top-ups, bill payments, loans, term deposits, and more, all built on the same accessible component set.",
+        media: {
+          images: [
+            {
+              src: "/work/mmbl/ui-home.jpg",
+              alt: "The redesigned Dost home screen, logged out, with clear entry points for transfers, top-ups, bill payments, and loans.",
+              w: 674,
+              h: 1350,
+            },
+            {
+              src: "/work/mmbl/ui-account-select.jpg",
+              alt: "Account selection screen for the Asaan Digital Account, listing top features and requirements before a customer commits.",
+              w: 659,
+              h: 1380,
+            },
+            {
+              src: "/work/mmbl/ui-term-deposit.jpg",
+              alt: "Term Deposit screen showing existing TDR plans with progress bars toward each tenure's completion date.",
+              w: 674,
+              h: 1420,
+            },
+            {
+              src: "/work/mmbl/ui-loan-calculator.jpg",
+              alt: "Loan Calculator screen with amount and tenure sliders, showing the resulting monthly instalment and annual interest.",
+              w: 664,
+              h: 1420,
+            },
+          ],
+          caption: "Home, account opening, term deposits, and the loan calculator: four of the ten journeys in the shipped kit.",
+        },
+      },
+      {
         heading: "Part Two: one app, two banks",
         body: "After the first release, MMBL brought us back. This time the ask was an Islamic banking experience inside the same app, for customers who bank according to Sharia. That isn't a skin over the conventional version. Interest can't just be renamed, the product set is different, and for many of these customers that difference is the whole reason they bank where they do. So the first question wasn't visual. It was how the app decides which version of itself to show: a splash-screen check routes each account before anything loads, conventional to red, Islamic to green, while customers with both accounts get a toggle and new users choose before sign-up.",
         items: [
           "Stayed the same: navigation & information architecture, the core flows (transfer, top-up, bills), the component library, and the patterns tested in phase one.",
           "Changed on top: visual identity (red vs. green), the home screen & offerings, the product set, and the language around money.",
         ],
+        itemsLayout: "comparison",
         media: {
           images: [
             {
@@ -318,6 +364,7 @@ export const caseStudies: CaseStudy[] = [
           "Zakat & Sadaqah tools",
           "Inheritance calculator",
         ],
+        itemsLayout: "tags",
       },
       {
         heading: "The shipped app",
@@ -531,6 +578,8 @@ export const caseStudies: CaseStudy[] = [
     ],
     image: "/work/healthops/login.jpg",
     imageAlt: "The HealthOps / SystemSight planning platform login screen.",
+    coverAnimation: "/work/healthops/cover.json",
+    coverVideo: "/work/healthops/cover.mp4",
     accent: "#7048d6",
   },
   {
@@ -635,6 +684,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     image: "/work/climate-finance-accelerator.jpg",
     imageAlt: "The Climate Finance Accelerator Pakistan launch event, with the programme's opening slide projected to the room.",
+    coverVideo: "/work/climate-finance-accelerator/cover.mp4",
     accent: "#1f9d6b",
     confidentialityNote:
       "Delivered as Communications Lead on CFA Pakistan, a UK Government (FCDO) programme implemented by DAI. Campaign materials shown are public. The strategic communications plan is confidential and is described here, not reproduced.",
@@ -876,6 +926,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     image: "/work/biofutures/hero.jpg",
     imageAlt: "The printed futures cards spread across a workshop table with sticky notes during the Biofutures event.",
+    coverVideo: "/work/biofutures/cover.mp4",
     accent: "#0e94a0",
   },
   {
@@ -1034,6 +1085,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     image: "/work/maternal-health-research.jpg",
     imageAlt: "Prenatal supplements, including folic acid and calcium lactate, on a pharmacy shelf during field research in Pakistan.",
+    coverAnimation: "/work/maternal-health-research/cover.json",
     accent: "#cf3d73",
   },
   {
@@ -1180,7 +1232,301 @@ export const caseStudies: CaseStudy[] = [
     ],
     image: "/work/max/hero-creation-dark.jpg",
     imageAlt: "The Max Creation editor restyled with a dark, full-bleed game illustration background, showing live chat, 3D interaction, and player profile widgets.",
+    coverAnimation: "/work/max/cover.json",
+    coverVideo: "/work/max/cover.mp4",
     accent: "#f2542d",
+  },
+  {
+    slug: "flyve",
+    index: "08",
+    title: "Flyve: Running for Everyone",
+    client: "Flyve LLC",
+    tagline: "A community platform connecting runners of every experience level across New York City.",
+    year: "2023",
+    sector: "Social Fitness / Community",
+    role: "UI/UX Designer",
+    type: "Research, UX design & high-fidelity UI",
+    summary:
+      "Flyve's founders had a running community already forming offline, on trails and in group chats, but no shared platform to bring it together. My job was to research that community and design the app that could hold it.",
+    problem:
+      "Beginner runners found existing running clubs intimidating, and experienced runners training for a race wanted a real running partner, not just a tracking app. The platform had to work for both: a low-pressure way in for newcomers, and a way to actually find someone to train with for people already keeping a schedule.",
+    pullQuote: "Beginner runners are intimidated by running clubs and communities. People just want a buddy to run with.",
+    approach: [
+      "Ran a competitive teardown of TennisPal, BuddyUp, and Strava before designing anything, to see which parts of \"social fitness app\" were already solved and which were the actual gap.",
+      "Mapped the full product as a flowchart first (home, calendar, community, messenger, profile) so matching, events, and messaging shared one navigation model instead of three bolted-on features.",
+      "Took the onboarding, matching, and events flows to high fidelity in Figma, on a design system built around Halyard Micro and Inter.",
+    ],
+    outcome:
+      "A complete, high-fidelity prototype covering onboarding, runner-matching, and events, handed off with a documented design system so the founders could brief development directly from Figma.",
+    tools: "Figma",
+    sections: [
+      {
+        heading: "What Strava and running clubs don't do",
+        body: "Before designing anything, I audited the apps runners were already using. TennisPal let people find courts but wasn't built for pace or schedule matching. BuddyUp's flow felt more like a dating app than a running one. Strava synced everyone's data but stayed user-based, not community-based, so it never actually got two runners into the same park at the same time.",
+        items: [
+          "TennisPal: court-finding works, but sliders and matching are an afterthought.",
+          "BuddyUp: quick login, syncs with Strava, but the flow reads as dating, not running.",
+          "Strava: great feedback loop per user, but nothing pushes two runners toward the same run.",
+        ],
+      },
+      {
+        heading: "What runners actually told us",
+        body: "User research turned up a consistent split: beginners were put off by the idea of a \"running club,\" while more serious runners wanted a specific kind of help, someone at their pace, for a specific goal like a marathon.",
+        items: [
+          "It's difficult to schedule a run even with runners you already know.",
+          "People want running buddies to run with, not just a tracking app.",
+          "Running is a good way to meet new people, if the app doesn't feel like a chore.",
+          "A chat option that hides stats keeps the app from feeling like a numbers contest.",
+          "Runners want to filter by pace, since a mismatched pace ruins a run fast.",
+          "People training for marathons specifically want a partner, not just company.",
+        ],
+      },
+      {
+        heading: "Matching, without the dating-app feel",
+        body: "The core loop is a filtered search: pick a location, a time window, a pace range, and a distance, and Flyve returns runners nearby who fit. Results show exactly why someone's a match, their usual parks, their availability, what they're training for, so a message isn't a cold open.",
+        media: {
+          images: [
+            {
+              src: "/work/flyve/ui-home-search.png",
+              alt: "Flyve's map view for finding runners near Central Park, with filters for availability, gender, distance, preferred speed, and running clubs.",
+              w: 1316,
+              h: 2674,
+            },
+            {
+              src: "/work/flyve/ui-home-filters.png",
+              alt: "The 'where would you like to meet runners' filter sheet, with location, time, pace range, and distance controls.",
+              w: 1316,
+              h: 2674,
+            },
+            {
+              src: "/work/flyve/ui-home-matches.png",
+              alt: "Filtered results showing three matched runners near Central Park with their availability and training goals, each with a Message button.",
+              w: 1316,
+              h: 2674,
+            },
+          ],
+          caption: "Filter by pace, time, and distance, then see exactly why each result matched before you message them.",
+        },
+      },
+      {
+        heading: "An onboarding that asks what actually matters",
+        body: "Onboarding collects only what changes the matching: name, age range (kept private by default), and a self-rated level from beginner to advanced. No stats to fill in before you've even gone for a run.",
+        media: {
+          images: [
+            {
+              src: "/work/flyve/ui-onboarding-welcome.png",
+              alt: "Welcome screen illustration of a runner mid-stride, with the line 'Join us now and meet the running community!'",
+              w: 1316,
+              h: 2674,
+            },
+            {
+              src: "/work/flyve/ui-onboarding-name.png",
+              alt: "Onboarding step 1 of 5, asking what to call the new user.",
+              w: 1316,
+              h: 2674,
+            },
+            {
+              src: "/work/flyve/ui-onboarding-age.png",
+              alt: "Onboarding step 3 of 5, asking for date of birth, kept private by default.",
+              w: 1316,
+              h: 2674,
+            },
+            {
+              src: "/work/flyve/ui-onboarding-level.png",
+              alt: "Onboarding step 4 of 5, asking the user to self-rate as beginner, intermediate, or advanced.",
+              w: 1316,
+              h: 2674,
+            },
+          ],
+          caption: "Four steps, each one feeding the matching algorithm directly, nothing collected just to collect it.",
+        },
+      },
+      {
+        heading: "Events sit next to matching, not behind a separate app",
+        body: "Group runs needed the same home as one-on-one matching, so Events is a full calendar (public, private, and saved runs), not a bolted-on list. Opening a run shows the route, who's attending, and one clear action; creating one reuses the same guest- and location-picker patterns as the rest of the app.",
+        media: {
+          images: [
+            {
+              src: "/work/flyve/ui-events-calendar.png",
+              alt: "Events calendar filtered to Public, showing three upcoming Manhattan Wednesday Long Run listings for August 2023.",
+              w: 1316,
+              h: 2674,
+            },
+            {
+              src: "/work/flyve/ui-events-detail.png",
+              alt: "Manhattan Wednesday Run event detail, with route photo, pace/distance tags, attendee counts, and an Attend button.",
+              w: 1316,
+              h: 2674,
+            },
+            {
+              src: "/work/flyve/ui-events-add-guests.png",
+              alt: "Add guests sheet for inviting friends to an event by name, with select-all and per-person checkboxes.",
+              w: 1316,
+              h: 2674,
+            },
+            {
+              src: "/work/flyve/ui-events-add-location.png",
+              alt: "Add location sheet for pinpointing an event's meeting spot on a searchable map.",
+              w: 1316,
+              h: 2674,
+            },
+          ],
+          caption: "Same patterns as matching: search, pick, confirm. Creating an event never feels like a different app.",
+        },
+      },
+    ],
+    image: "/work/flyve/ui-home-matches.png",
+    imageAlt: "Flyve's runner-matching screen, showing filtered results near Central Park with each runner's availability and training goal.",
+    coverAnimation: "/work/flyve/cover.json",
+    coverVideo: "/work/flyve/cover.mp4",
+    accent: "#1f7a4d",
+  },
+  {
+    slug: "blockbytes",
+    index: "09",
+    title: "BlockBytes Capital Web Redesign",
+    client: "BlockBytes Capital × Ideate Innovation",
+    tagline: "A dynamic new web presence for a digital asset firm, built to make complex crypto products legible to serious investors.",
+    year: "2025",
+    sector: "Crypto / Digital Asset Management",
+    role: "Design & Project Lead",
+    type: "UI/UX design & Webflow development",
+    summary:
+      "BlockBytes Capital manages data-driven crypto portfolios and multi-layered financial products for high-value clients. Their existing Squarespace site undersold all of it: a static design that didn't inspire confidence, product explanations too dense to skim, and no clear next step for an interested investor to take.",
+    problem:
+      "A firm asking serious investors to trust it with digital assets needs a site that reads as credible on sight, and that can make multi-layered financial products (different risk levels, different time horizons) understandable without a call. The old site had none of that: no clear structure, no motion, no path from visiting to booking a demo.",
+    pullQuote: "The feedback from our customers has been amazing, they LOVE IT. This is a HUGEEE UPGRADE!",
+    pullQuoteAttribution: "Ozzy, BlockBytes Capital",
+    approach: [
+      "Built a lean sitemap around four jobs: establish credibility (About), explain the offering (Services/Funds), provide proof (Blog/Musings), and drive action (Contact).",
+      "Chose Webflow specifically for its interaction engine, using motion to guide attention through dense financial content instead of relying on longer copy.",
+      "Started concepts in a bolder purple gradient, then pivoted with the client to a restrained dark, neutral-grey palette that better matched a firm managing other people's money.",
+    ],
+    outcome:
+      "A polished, motion-driven site that replaced a static Squarespace page with a credible, navigable home for BlockBytes' fund lineup, built and launched end-to-end in Webflow.",
+    metrics: [
+      { label: "Timeline", value: "2 months" },
+      { label: "Fund strategies documented", value: "2" },
+      { label: "Core site sections", value: "4" },
+    ],
+    tools: "Figma · Webflow",
+    sections: [
+      {
+        heading: "From a static Squarespace page to a firm that looks the part",
+        body: "The old site was a single long Squarespace scroll: dense paragraphs, stock chart imagery, and no real hierarchy between a casual visitor and a serious lead. The redesign opens with the firm's name treated like a wordmark, one line of positioning, and a clear path into the fund lineup.",
+        media: {
+          images: [
+            {
+              src: "/work/blockbytes/ui-before.jpg",
+              alt: "The previous BlockBytes Capital Squarespace site: dense paragraphs of text over a cream background with candlestick and volume charts.",
+              label: "Before",
+              w: 1530,
+              h: 1250,
+            },
+            {
+              src: "/work/blockbytes/ui-hero.jpg",
+              alt: "The redesigned BlockBytes Capital homepage: a dark hero with a pixel-art wordmark, an isometric diamond graphic, and the line 'Building Your Future, One Block At a Time.'",
+              label: "After",
+              w: 3270,
+              h: 1670,
+            },
+          ],
+          contain: true,
+          caption: "Same firm, same funds. The redesign gives it a hierarchy, a wordmark, and somewhere to look confident.",
+        },
+      },
+      {
+        heading: "Two funds, explained on their own terms",
+        body: "BlockBytes runs multiple strategies at different risk levels. Rather than one page listing them as bullet points, each fund gets its own numbered section, an isometric block mark, and a plain-language read on who it's for.",
+        media: {
+          images: [
+            {
+              src: "/work/blockbytes/ui-fund-pages.jpg",
+              alt: "BlockBuild and BlockTuned fund sections, each with a numbered heading, a one-line risk profile, and an isometric line-art block icon.",
+              w: 3270,
+              h: 1935,
+              full: true,
+            },
+          ],
+          caption: "Each tagline states the fund's risk profile in four words, before a reader gets to the paragraph below it.",
+        },
+      },
+    ],
+    image: "/work/blockbytes/ui-hero.jpg",
+    imageAlt: "The redesigned BlockBytes Capital homepage with a pixel-art wordmark and isometric diamond graphic on a dark background.",
+    accent: "#4c2889",
+  },
+  {
+    slug: "impetus",
+    index: "10",
+    title: "Impetus Advisory Group Website",
+    client: "Impetus Advisory Group",
+    tagline: "A Webflow site for a 38-person advisory group, built to hold four practice areas and a full staff directory as one coherent firm.",
+    year: "2024",
+    sector: "Management Consulting",
+    role: "Web Design & Development",
+    type: "Web design & Webflow development",
+    summary:
+      "Impetus Advisory Group runs consulting work across healthcare, change management, finance and economy, and public commentary, with a team of 38 spread across those practices. The site needed to hold all of it — a real Insights blog, a full People directory, a separate culture page, and a careers form — without reading as four disconnected mini-sites bolted together.",
+    problem:
+      "A firm that splits cleanly into practice areas risks a homepage that either flattens every specialty into one generic pitch, or forces a visitor to pick a lane before they've seen anything. And a team of 38 people needs a directory that scales past a hand-built grid of a dozen cards.",
+    approach: [
+      "Built the homepage hero as a CMS-driven switch: selecting a practice area (Healthcare, Change Management, Finance & Economy, Podcast & Opinions) swaps the headline and the Insights articles pulled beneath it, so one hero serves four different audiences.",
+      "Modeled People as a single Webflow CMS collection powering all 38 staff profiles — photo, title, short bio — rendered as one directory grid instead of hand-built sections per department.",
+      "Kept Life at Impetus and Careers as their own lightweight pages, an Instagram-fed culture blog and a short lead-capture form, so tone can shift from advisory-firm formal to workplace-casual without touching the rest of the system.",
+    ],
+    outcome:
+      "A single Webflow build that holds four practice areas, a real Insights CMS, and a 38-person directory without feeling like four sites stitched together — each section reads as its own space while sharing one visual system.",
+    metrics: [
+      { label: "Practice areas", value: "4" },
+      { label: "Team profiles", value: "38" },
+      { label: "Core site sections", value: "4" },
+    ],
+    tools: "Webflow",
+    sections: [
+      {
+        heading: "A hero that reframes itself by practice area",
+        body: "Rather than one static headline, the homepage hero is wired to the site's four practice-area tabs. Selecting one swaps the headline copy and the three Insights articles surfaced underneath — so a healthcare client and a finance client land on what reads like two different, specific homepages built just for them.",
+        media: {
+          images: [
+            {
+              src: "/work/impetus/ui-homepage.png",
+              alt: "The Impetus Advisory Group homepage with Finance & Economy selected, showing the headline and three matching Insights articles.",
+              w: 3040,
+              h: 1622,
+              full: true,
+            },
+          ],
+          caption: "Selecting a practice area swaps the headline and the three articles beneath it — one component, four homepages.",
+        },
+      },
+      {
+        heading: "Same system, two different tones",
+        body: "Podcast & Opinions swaps the article cards for an embedded YouTube playlist instead. Life at Impetus goes further, replacing the whole page with a culture-forward video hero — both running on the same nav and layout as the advisory-facing homepage.",
+        media: {
+          images: [
+            {
+              src: "/work/impetus/ui-podcast.png",
+              alt: "The Podcast & Opinions tab, showing an embedded YouTube playlist in place of article cards.",
+              label: "Podcast & Opinions",
+              w: 3040,
+              h: 1618,
+            },
+            {
+              src: "/work/impetus/ui-life-at-impetus.png",
+              alt: "The Life at Impetus page, with a full-bleed video hero reading 'Empathy, Excellence, Empowerment.'",
+              label: "Life at Impetus",
+              w: 3040,
+              h: 1620,
+            },
+          ],
+          caption: "Same nav, same wordmark, same footer — a noticeably different register for a noticeably different audience.",
+        },
+      },
+    ],
+    image: "/work/impetus/ui-homepage.png",
+    imageAlt: "The Impetus Advisory Group homepage with Finance & Economy selected, showing the headline and three matching Insights articles.",
+    accent: "#7a3226",
   },
 ];
 
@@ -1231,9 +1577,9 @@ export const clients: {
   },
   {
     name: "Impetus",
+    slugs: ["impetus"],
     logo: "/logos/impetus.svg",
     logoAspect: 3.31,
-    tags: ["Web Design", "Web Development"],
   },
   {
     name: "Jack Morton",
@@ -1241,6 +1587,8 @@ export const clients: {
     logoAspect: 4.55,
     tags: ["Web Development", "Production Design"],
   },
+  { name: "Flyve", slugs: ["flyve"] },
+  { name: "BlockBytes Capital", slugs: ["blockbytes"] },
 ];
 
 export const testimonials: {

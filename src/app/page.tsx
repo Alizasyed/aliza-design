@@ -1,6 +1,6 @@
 import { HeroName } from "@/components/HeroName";
 import { Reveal, RevealGroup, RevealItem } from "@/components/Reveal";
-import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectGridCard } from "@/components/ProjectGridCard";
 import { TrustedBy } from "@/components/TrustedBy";
 import { Testimonials } from "@/components/Testimonials";
 import { caseStudies, services, profile } from "@/lib/data";
@@ -78,11 +78,10 @@ export default function Home() {
           </div>
         </Reveal>
 
-        <div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-14 mt-10">
           {caseStudies.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
+            <ProjectGridCard key={project.slug} project={project} />
           ))}
-          <div className="border-t hairline" />
         </div>
       </section>
 
