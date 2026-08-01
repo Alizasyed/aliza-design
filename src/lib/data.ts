@@ -60,6 +60,8 @@ export type CaseStudy = {
       flipBack?: string;
       /** Render the heading/body/items in one column and the image in an adjacent column, instead of stacking the image full-width below the text. Keeps tall single screenshots from eating a whole scroll with little text visible alongside. */
       sideBySide?: boolean;
+      /** Force a fixed 2-column grid (e.g. 4 images as 2x2) instead of the default column count derived from image count, for larger/more legible tiles. */
+      grid2x2?: boolean;
       caption?: string;
     };
     /** Renders a row of persona cards (portrait + quote + pains/gains) instead of items/media. */
@@ -187,14 +189,12 @@ export const caseStudies: CaseStudy[] = [
             {
               src: "/work/mmbl/contrast-tested.jpg",
               alt: "WCAG contrast ratios documented for the Terra Red, Deep Cosmos, and Auburn pairings.",
-              label: "Tested",
               w: 2000,
               h: 917,
             },
             {
               src: "/work/mmbl/contrast-shipped.jpg",
               alt: "WCAG contrast ratios documented for the Teal and Saffron Gold pairings used in the Islamic experience.",
-              label: "Shipped",
               w: 2000,
               h: 1273,
             },
@@ -237,6 +237,7 @@ export const caseStudies: CaseStudy[] = [
               h: 917,
             },
           ],
+          grid2x2: true,
           caption: "Four moderated tests, four fixes, from a clearer select-account control to a relabelled top-up entry point.",
         },
       },
@@ -253,39 +254,6 @@ export const caseStudies: CaseStudy[] = [
             },
           ],
           caption: "Heatmap from testing: attention stuck on the amount, not the calculator CTA.",
-        },
-      },
-      {
-        heading: "The shipped UI kit",
-        body: "The new UI kit shipped across all ten user journeys, not just the ones tested above: home, account opening, transfers, top-ups, bill payments, loans, term deposits, and more, all built on the same accessible component set.",
-        media: {
-          images: [
-            {
-              src: "/work/mmbl/ui-home.jpg",
-              alt: "The redesigned Dost home screen, logged out, with clear entry points for transfers, top-ups, bill payments, and loans.",
-              w: 674,
-              h: 1350,
-            },
-            {
-              src: "/work/mmbl/ui-account-select.jpg",
-              alt: "Account selection screen for the Asaan Digital Account, listing top features and requirements before a customer commits.",
-              w: 659,
-              h: 1380,
-            },
-            {
-              src: "/work/mmbl/ui-term-deposit.jpg",
-              alt: "Term Deposit screen showing existing TDR plans with progress bars toward each tenure's completion date.",
-              w: 674,
-              h: 1420,
-            },
-            {
-              src: "/work/mmbl/ui-loan-calculator.jpg",
-              alt: "Loan Calculator screen with amount and tenure sliders, showing the resulting monthly instalment and annual interest.",
-              w: 664,
-              h: 1420,
-            },
-          ],
-          caption: "Home, account opening, term deposits, and the loan calculator: four of the ten journeys in the shipped kit.",
         },
       },
       {
@@ -315,18 +283,18 @@ export const caseStudies: CaseStudy[] = [
         media: {
           images: [
             {
-              src: "/work/mmbl/home-conventional.jpg",
+              src: "/work/mmbl/home-conventional.png",
               alt: "The conventional Dost home screen in the red visual identity.",
               label: "Conventional",
-              w: 620,
-              h: 1400,
+              w: 1419,
+              h: 2796,
             },
             {
-              src: "/work/mmbl/home-islamic.jpg",
+              src: "/work/mmbl/home-islamic.png",
               alt: "The Islamic Dost home screen in the teal visual identity, showing Murabaha Financing and Takaful.",
               label: "Islamic",
-              w: 651,
-              h: 1400,
+              w: 1419,
+              h: 2796,
             },
           ],
           caption: "Same structure underneath. Two identities on top.",
@@ -337,18 +305,18 @@ export const caseStudies: CaseStudy[] = [
         media: {
           images: [
             {
-              src: "/work/mmbl/onboarding-conventional.jpg",
+              src: "/work/mmbl/onboarding-conventional.png",
               alt: "The conventional Dost login screen.",
               label: "Conventional",
-              w: 620,
-              h: 1400,
+              w: 1419,
+              h: 2796,
             },
             {
-              src: "/work/mmbl/onboarding-islamic.jpg",
+              src: "/work/mmbl/onboarding-islamic.png",
               alt: "The Islamic Dost onboarding screen introducing Shariah Banking and Murabaha Financing.",
               label: "Islamic",
-              w: 415,
-              h: 900,
+              w: 1419,
+              h: 2796,
             },
           ],
           caption: "The same onboarding journey, told in each customer's own terms.",
@@ -372,28 +340,28 @@ export const caseStudies: CaseStudy[] = [
         media: {
           images: [
             {
-              src: "/work/mmbl/loans-intro.jpg",
+              src: "/work/mmbl/loans-intro.png",
               alt: "Onboarding screen introducing loans made for the customer.",
-              w: 646,
-              h: 1400,
+              w: 1419,
+              h: 2796,
             },
             {
-              src: "/work/mmbl/onboarding.jpg",
+              src: "/work/mmbl/onboarding.png",
               alt: "Onboarding screen confirming identity verification, with account setup progress steps.",
-              w: 646,
-              h: 1400,
+              w: 1419,
+              h: 2796,
             },
             {
-              src: "/work/mmbl/onboarding-conventional.jpg",
+              src: "/work/mmbl/onboarding-conventional.png",
               alt: "The conventional Dost login screen.",
-              w: 620,
-              h: 1400,
+              w: 1419,
+              h: 2796,
             },
             {
-              src: "/work/mmbl/home-conventional.jpg",
+              src: "/work/mmbl/home-conventional.png",
               alt: "The conventional Dost home screen, fully shipped.",
-              w: 620,
-              h: 1400,
+              w: 1419,
+              h: 2796,
             },
           ],
           caption: "From first screen to verified identity to the home screen: the flow that shipped, start to finish.",

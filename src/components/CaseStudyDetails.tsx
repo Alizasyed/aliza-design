@@ -325,11 +325,13 @@ export function CaseStudyDetails({ project }: { project: CaseStudy }) {
               <figure className="mt-8">
                 <div
                   className={
-                    section.media.images.length === 3
-                      ? "media-wide grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6"
-                      : section.media.images.length >= 4
-                        ? "media-wide grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6"
-                        : section.media.images.length > 1
+                    section.media.grid2x2
+                      ? "media-wide grid grid-cols-2 gap-4 sm:gap-6"
+                      : section.media.images.length === 3
+                        ? "media-wide grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6"
+                        : section.media.images.length >= 4
+                          ? "media-wide grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6"
+                          : section.media.images.length > 1
                           ? section.media.images.every((img) => img.h > img.w)
                             ? "grid grid-cols-2 gap-4 sm:gap-6 max-w-md mx-auto"
                             : "grid grid-cols-2 gap-4 sm:gap-6"
@@ -391,7 +393,7 @@ export function CaseStudyDetails({ project }: { project: CaseStudy }) {
                             className="overflow-hidden border hairline bg-panel"
                             style={
                               multi
-                                ? { aspectRatio: contain ? "1 / 1" : `${ratio.w} / ${ratio.h}` }
+                                ? { aspectRatio: contain ? `${img.w} / ${img.h}` : `${ratio.w} / ${ratio.h}` }
                                 : undefined
                             }
                           >
