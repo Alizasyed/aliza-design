@@ -142,28 +142,54 @@ export default function Home() {
               <h2 className="field-label text-ink-faint mb-10">What Aliza Does</h2>
             </Reveal>
 
-            <RevealGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
-              {services.map((service, i) => (
-                <RevealItem key={service.tag} className="border-t-2 border-ink pt-6">
-                  <span className="field-label text-ink-faint">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="font-display text-2xl sm:text-[1.75rem] leading-tight mt-3 mb-5 text-balance-pretty">
-                    {service.tag}
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {service.items.map((item) => (
-                      <span
-                        key={item}
-                        className="field-label rounded-full border border-line px-3 py-1.5 text-ink-soft"
-                      >
-                        {item}
-                      </span>
+            {(() => {
+              const [primary, ...secondary] = services;
+              return (
+                <>
+                  <RevealGroup>
+                    <RevealItem className="border-t-2 border-accent pt-6 pb-10 sm:pb-12">
+                      <span className="field-label text-accent">01 &middot; Primary focus</span>
+                      <h3 className="font-display text-4xl sm:text-5xl leading-tight mt-3 mb-6 text-balance-pretty">
+                        {primary.tag}
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {primary.items.map((item) => (
+                          <span
+                            key={item}
+                            className="field-label rounded-full border border-line px-3 py-1.5 text-ink-soft"
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </RevealItem>
+                  </RevealGroup>
+
+                  <RevealGroup className="mt-2 grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-10 border-t hairline pt-10">
+                    {secondary.map((service, i) => (
+                      <RevealItem key={service.tag}>
+                        <span className="field-label text-ink-faint">
+                          {String(i + 2).padStart(2, "0")}
+                        </span>
+                        <h3 className="font-display text-xl leading-tight mt-2 mb-4 text-balance-pretty">
+                          {service.tag}
+                        </h3>
+                        <div className="flex flex-wrap gap-2">
+                          {service.items.map((item) => (
+                            <span
+                              key={item}
+                              className="field-label rounded-full border border-line px-2.5 py-1 text-ink-faint"
+                            >
+                              {item}
+                            </span>
+                          ))}
+                        </div>
+                      </RevealItem>
                     ))}
-                  </div>
-                </RevealItem>
-              ))}
-            </RevealGroup>
+                  </RevealGroup>
+                </>
+              );
+            })()}
           </div>
         </div>
       </section>
