@@ -27,9 +27,9 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
-const title = "Aliza Habib · Senior Product Designer & Communications Lead";
+const title = "Aliza Habib · Senior UI/UX Product Designer";
 const description =
-  "Aliza Habib is a senior product designer and communications lead shaping systems, services, and speculative futures across fintech, climate finance, and healthcare.";
+  "Aliza Habib is a senior UI/UX product designer shaping systems, services, and speculative futures across fintech, climate finance, and healthcare.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aliza.design"),

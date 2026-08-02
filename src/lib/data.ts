@@ -551,8 +551,460 @@ export const caseStudies: CaseStudy[] = [
     accent: "#7048d6",
   },
   {
-    slug: "climate-finance-accelerator",
+    slug: "flyve",
     index: "03",
+    title: "Flyve: Running for Everyone",
+    client: "Flyve LLC",
+    tagline: "A community platform connecting runners of every experience level across New York City.",
+    year: "2023",
+    sector: "Social Fitness / Community",
+    role: "UI/UX Designer",
+    type: "Research, UX design & high-fidelity UI",
+    summary:
+      "Flyve's founders had a running community already forming offline, on trails and in group chats, but no shared platform to bring it together. My job was to research that community and design the app that could hold it.",
+    problem:
+      "Beginner runners found existing running clubs intimidating, and experienced runners training for a race wanted a real running partner, not just a tracking app. The platform had to work for both: a low-pressure way in for newcomers, and a way to actually find someone to train with for people already keeping a schedule.",
+    pullQuote: "Beginner runners are intimidated by running clubs and communities. People just want a buddy to run with.",
+    approach: [
+      "Ran a competitive teardown of TennisPal, BuddyUp, and Strava before designing anything, to see which parts of \"social fitness app\" were already solved and which were the actual gap.",
+      "Mapped the full product as a flowchart first (home, calendar, community, messenger, profile) so matching, events, and messaging shared one navigation model instead of three bolted-on features.",
+      "Took the onboarding, matching, and events flows to high fidelity in Figma, on a design system built around Halyard Micro and Inter.",
+    ],
+    outcome:
+      "A complete, high-fidelity prototype covering onboarding, runner-matching, and events, handed off with a documented design system so the founders could brief development directly from Figma.",
+    tools: "Figma",
+    sections: [
+      {
+        heading: "What Strava and running clubs don't do",
+        body: "Before designing anything, I audited the apps runners were already using. TennisPal let people find courts but wasn't built for pace or schedule matching. BuddyUp's flow felt more like a dating app than a running one. Strava synced everyone's data but stayed user-based, not community-based, so it never actually got two runners into the same park at the same time.",
+        items: [
+          "TennisPal: court-finding works, but sliders and matching are an afterthought.",
+          "BuddyUp: quick login, syncs with Strava, but the flow reads as dating, not running.",
+          "Strava: great feedback loop per user, but nothing pushes two runners toward the same run.",
+        ],
+      },
+      {
+        heading: "What runners actually told us",
+        body: "User research turned up a consistent split: beginners were put off by the idea of a \"running club,\" while more serious runners wanted a specific kind of help, someone at their pace, for a specific goal like a marathon.",
+        items: [
+          "It's difficult to schedule a run even with runners you already know.",
+          "People want running buddies to run with, not just a tracking app.",
+          "Running is a good way to meet new people, if the app doesn't feel like a chore.",
+          "A chat option that hides stats keeps the app from feeling like a numbers contest.",
+          "Runners want to filter by pace, since a mismatched pace ruins a run fast.",
+          "People training for marathons specifically want a partner, not just company.",
+        ],
+      },
+      {
+        heading: "Matching, without the dating-app feel",
+        body: "The core loop is a filtered search: pick a location, a time window, a pace range, and a distance, and Flyve returns runners nearby who fit. Results show exactly why someone's a match, their usual parks, their availability, what they're training for, so a message isn't a cold open.",
+        media: {
+          images: [
+            {
+              src: "/work/flyve/ui-home-search.png",
+              alt: "Flyve's map view for finding runners near Central Park, with filters for availability, gender, distance, preferred speed, and running clubs.",
+              w: 1316,
+              h: 2674,
+            },
+            {
+              src: "/work/flyve/ui-home-filters.png",
+              alt: "The 'where would you like to meet runners' filter sheet, with location, time, pace range, and distance controls.",
+              w: 1316,
+              h: 2674,
+            },
+            {
+              src: "/work/flyve/ui-home-matches.png",
+              alt: "Filtered results showing three matched runners near Central Park with their availability and training goals, each with a Message button.",
+              w: 1316,
+              h: 2674,
+            },
+          ],
+          caption: "Filter by pace, time, and distance, then see exactly why each result matched before you message them.",
+        },
+      },
+      {
+        heading: "An onboarding that asks what actually matters",
+        body: "Onboarding collects only what changes the matching: name, age range (kept private by default), and a self-rated level from beginner to advanced. No stats to fill in before you've even gone for a run.",
+        media: {
+          images: [
+            {
+              src: "/work/flyve/ui-onboarding-welcome.png",
+              alt: "Welcome screen illustration of a runner mid-stride, with the line 'Join us now and meet the running community!'",
+              w: 1316,
+              h: 2674,
+            },
+            {
+              src: "/work/flyve/ui-onboarding-name.png",
+              alt: "Onboarding step 1 of 5, asking what to call the new user.",
+              w: 1316,
+              h: 2674,
+            },
+            {
+              src: "/work/flyve/ui-onboarding-age.png",
+              alt: "Onboarding step 3 of 5, asking for date of birth, kept private by default.",
+              w: 1316,
+              h: 2674,
+            },
+            {
+              src: "/work/flyve/ui-onboarding-level.png",
+              alt: "Onboarding step 4 of 5, asking the user to self-rate as beginner, intermediate, or advanced.",
+              w: 1316,
+              h: 2674,
+            },
+          ],
+          caption: "Four steps, each one feeding the matching algorithm directly, nothing collected just to collect it.",
+        },
+      },
+      {
+        heading: "Events sit next to matching, not behind a separate app",
+        body: "Group runs needed the same home as one-on-one matching, so Events is a full calendar (public, private, and saved runs), not a bolted-on list. Opening a run shows the route, who's attending, and one clear action; creating one reuses the same guest- and location-picker patterns as the rest of the app.",
+        media: {
+          images: [
+            {
+              src: "/work/flyve/ui-events-calendar.png",
+              alt: "Events calendar filtered to Public, showing three upcoming Manhattan Wednesday Long Run listings for August 2023.",
+              w: 1316,
+              h: 2674,
+            },
+            {
+              src: "/work/flyve/ui-events-detail.png",
+              alt: "Manhattan Wednesday Run event detail, with route photo, pace/distance tags, attendee counts, and an Attend button.",
+              w: 1316,
+              h: 2674,
+            },
+            {
+              src: "/work/flyve/ui-events-add-guests.png",
+              alt: "Add guests sheet for inviting friends to an event by name, with select-all and per-person checkboxes.",
+              w: 1316,
+              h: 2674,
+            },
+            {
+              src: "/work/flyve/ui-events-add-location.png",
+              alt: "Add location sheet for pinpointing an event's meeting spot on a searchable map.",
+              w: 1316,
+              h: 2674,
+            },
+          ],
+          caption: "Same patterns as matching: search, pick, confirm. Creating an event never feels like a different app.",
+        },
+      },
+    ],
+    image: "/work/flyve/ui-home-matches.png",
+    imageAlt: "Flyve's runner-matching screen, showing filtered results near Central Park with each runner's availability and training goal.",
+    coverAnimation: "/work/flyve/cover.json",
+    coverVideo: "/work/flyve/cover.mp4",
+    accent: "#1f7a4d",
+  },
+  {
+    slug: "max",
+    index: "04",
+    title: "Max: Gaming Community Platform",
+    client: "Gaming Engagement Platform (under NDA) × Ideate Innovation",
+    tagline: "A no-code page builder and AI-powered analytics platform helping gaming brands turn their Discord communities into interactive, rewarding experiences.",
+    year: "2025",
+    sector: "Gaming / Marketing Technology",
+    role: "Product Designer, equal collaboration with two other designers",
+    type: "SaaS platform design · Web app + analytics dashboard",
+    summary:
+      "Gaming brands build huge, active communities on Discord, but Discord itself gives them no ownable space to showcase a brand, run rewards, or actually see who their best fans are. This product lets a brand spin up a branded, interactive page connected to that community in minutes, then shows them what's happening inside it.",
+    problem:
+      "A brand's community already exists. What it doesn't have is a home: somewhere to bring a 3D item drop, a live chat, a poll, and a rewards balance together under its own look and feel, without engineering effort. And once that page exists, the brand still can't answer a basic question: which fans actually matter, and what should we do for them next?",
+    pullQuote: "This product gives a gaming brand's existing community a place built to reward it.",
+    approach: [
+      "Mapped the flow end to end: connect a Discord server, brand a page in minutes, build it from templates or from scratch, then read what the audience does on it.",
+      "Designed a widget-based creation system (3D interaction, live chat, polls, rewards) that reskins cleanly across light and dark, so one page structure works for very different brand identities.",
+      "Built the analytics layer, MAX Core, around AI-generated insight and segment-level recommendations, not just charts.",
+    ],
+    outcome:
+      "A complete, validated concept spanning onboarding, page creation, and analytics, handed off as a documented Figma system. The client paused the initiative before build, so this reflects the design work as delivered, not a shipped product.",
+    metrics: [
+      { label: "Core surfaces designed", value: "3" },
+      { label: "Page templates shipped", value: "3" },
+      { label: "Designers, equal collaboration", value: "3" },
+    ],
+    tools: "Figma",
+    confidentialityNote:
+      "Delivered through Ideate Innovation; the commissioning client is anonymised under NDA and the initiative was paused before launch. Brand content shown (e.g. Valorant) is illustrative example content used during design, not a confirmed partner. Designed in equal collaboration with two other Ideate designers.",
+    locked: true,
+    sections: [
+      {
+        heading: "One page, built for the community",
+        body: "The pitch was simple to say and hard to deliver: give a brand a single page that pulls its community's favourite things (a chat, a poll, a reward) into one place, styled like the brand and not like a template. The landing experience had to sell that in one scroll, to a marketing lead who has never used a page builder before.",
+        media: {
+          images: [
+            {
+              src: "/work/max/landing.jpg",
+              alt: "Max marketing landing page: 'Engage with your audience', with audience insight cards and a mascot character.",
+              w: 1800,
+              h: 1125,
+            },
+          ],
+          caption: "The pitch, in one scroll: audience insight, community rewards, and a branded mascot doing the explaining.",
+        },
+      },
+      {
+        heading: "Branding a page in minutes",
+        body: "Setup asks for exactly what's needed to make a page feel like the brand's own: a project name, the Discord server and channel it lives inside, a logo, an accent colour, a theme, a font. Nothing here is a Max concept the user has to learn first.",
+        media: {
+          images: [
+            {
+              src: "/work/max/onboarding-branding.jpg",
+              alt: "Welcome to Max onboarding screen: project name, Discord server selection, logo upload, accent colour, theme, and font.",
+              w: 1800,
+              h: 1125,
+            },
+          ],
+          caption: "Setup speaks the brand's language first: Discord server, logo, accent colour, font.",
+        },
+      },
+      {
+        heading: "Templates that fit the moment",
+        body: "Not every brand needs the same page. A single-drop launch wants one hero moment; a brand running several rewards at once wants them all visible; a brand mostly broadcasting news wants a feed. Three starting layouts cover those cases, each named for the job it does rather than for what it looks like.",
+        items: [
+          "Center-Stage: for highlighting a single brand experience.",
+          "Bento: for showcasing multiple rewards and interactions.",
+          "Notice-board: for listing broadcasts and announcements.",
+        ],
+        media: {
+          images: [
+            {
+              src: "/work/max/template-picker.jpg",
+              alt: "Template picker showing three starting layouts: Center-Stage, Bento, and Notice-board.",
+              w: 1800,
+              h: 1125,
+            },
+          ],
+          caption: "Three layouts, each named for the job it does, not the shape it makes.",
+        },
+      },
+      {
+        heading: "A builder that reskins itself",
+        body: "The creation surface is a widget canvas: 3D object interaction, live chat backed by an AI assistant, a player profile, polls, rewards, all dropped onto a page and restyled with a background and accent colour. The same widget set had to hold up equally well against a soft pastel background and a full-bleed, in-universe game illustration, since brands would want both.",
+        media: {
+          images: [
+            {
+              src: "/work/max/editor-light.jpg",
+              alt: "Max Creation editor in a light pink theme, showing 3D interaction, live chat, and poll widgets for a Valorant page.",
+              label: "Light theme",
+              w: 1800,
+              h: 1125,
+            },
+            {
+              src: "/work/max/editor-dark.jpg",
+              alt: "The same Max Creation editor restyled with a dramatic dark, full-bleed game illustration background.",
+              label: "Dark theme",
+              w: 1800,
+              h: 1125,
+            },
+          ],
+          caption: "Same widgets, same layout logic, two completely different brand moods.",
+        },
+      },
+      {
+        heading: "Campaign controls that stay out of the way",
+        body: "Publishing a page isn't a single action, it's a set of decisions a brand needs to keep making: is this campaign live or still a draft, is there a player limit, what happens in each integration. Those controls sit in their own tabbed settings panel rather than crowding the creative canvas.",
+        media: {
+          images: [
+            {
+              src: "/work/max/campaign-settings.jpg",
+              alt: "Campaign Settings panel with tabs for Campaign Settings, Theme & Branding, Content, Integrations, Advanced, and Publishing, plus a Draft/Live toggle.",
+              w: 1800,
+              h: 1125,
+            },
+          ],
+          caption: "Draft and Live sit side by side as an explicit choice, not a hidden publish state.",
+        },
+      },
+      {
+        heading: "Turning community data into direction",
+        body: "MAX Core is the half of the product that answers 'so what do we do now?' Every metric is paired with a plain-language read of it, and every audience segment comes with a suggested next action rather than a raw number.",
+        items: [
+          "Total audience, active-this-week, session time, and retention, each with an AI-confidence score attached.",
+          "A MAX Recommendation surfaced directly under the headline number: which segment to act on, and why.",
+          "Four audience segments (Top Fans, Frequent Claimers, Dormant Players, Influencers), each with its own engagement, growth, and a one-click action.",
+        ],
+        media: {
+          images: [
+            {
+              src: "/work/max/analytics-dashboard.jpg",
+              alt: "MAX Core analytics dashboard: total audience, AI insight and recommendation, and four audience segments (Top Fans, Frequent Claimers, Dormant Players, Influencers).",
+              w: 1183,
+              h: 1800,
+            },
+          ],
+          sideBySide: true,
+          caption: "MAX Core: Audience Overview, with an AI recommendation surfaced above the segments themselves.",
+        },
+      },
+    ],
+    image: "/work/max/hero-creation-dark.jpg",
+    imageAlt: "The Max Creation editor restyled with a dark, full-bleed game illustration background, showing live chat, 3D interaction, and player profile widgets.",
+    coverAnimation: "/work/max/cover.json",
+    coverVideo: "/work/max/cover.mp4",
+    accent: "#f2542d",
+  },
+  {
+    slug: "maternal-health-research",
+    index: "05",
+    title: "Maternal Health Supplement Research",
+    client: "Global Health Foundation (under NDA) × Ideate Innovation",
+    tagline:
+      "Qualitative research into why low-income pregnant women in Pakistan start, skip, or stop prenatal supplements, and what it means for the products meant to help them.",
+    year: "2026",
+    sector: "Healthcare / Research",
+    role: "UI/UX Design Lead & Researcher",
+    type: "Qualitative research · Synthesis · Personas & journeys",
+    tools: "FGDs, interviews, home observation",
+    confidentialityNote:
+      "Delivered through Ideate Innovation for a global health foundation under NDA. The end client and research partner are not named. All participant data is anonymised: no real names, ages, photographs, or identifying details are shown, in line with the study's confidentiality terms. Personas are composite archetypes drawn from aggregated findings.",
+    summary:
+      "A qualitative research project examining why low-income pregnant women in Pakistan start, skip, or stop taking prenatal supplements. This is the Pakistan arm of a wider multi-country study, commissioned by a global health foundation (anonymised under NDA) through Ideate Innovation.",
+    problem:
+      "The easy assumption is that women miss doses because they forget. The research found something harder: a missed dose is usually a rational response to a real constraint: the clinic gave three days' supply and the next dose costs money the household doesn't have, the iron tablet causes a burning that taking it with milk only hides, an elder believes the pills will make the baby too large, or there is simply no energy left after a day of labour. So the question for the product wasn't how to remind women. It was how to fit a supplement into lives defined by financial strain, medical fear, and family decision-making, so that taking it stops being a thing to decide.",
+    pullQuote:
+      "When there is more trouble, one feels like taking medicine. But when there is no reach, then I leave it.",
+    pullQuoteAttribution: "Study participant, anonymised",
+    approach: [
+      "Went into homes, not surveys: 36 in-depth interviews with pregnant women, 4 co-creative focus groups, 10 influencer interviews (husbands, mothers-in-law, sisters), 10 community health worker interviews, and 10 in-home observations of real routines.",
+      "Mapped a real day to find where a dose could realistically land, then mapped the decision path for irregular users to find exactly where the product loses them.",
+    ],
+    outcome:
+      "The findings pointed at the product, not just the messaging. Six specific, research-grounded recommendations, covering format, recognition, price, ritual, pill size, and household activation, turned into a design brief a health foundation could act on directly, not a generic call for better reminders.",
+    metrics: [
+      { label: "Participants", value: "66+" },
+      { label: "Personas to design against", value: "3" },
+      { label: "Countries in wider study", value: "3" },
+    ],
+    sections: [
+      {
+        heading: "Grounded in research",
+        body: "The fieldwork happened in homes, not on survey forms: sitting with women through a routine day, not just asking about it. That meant real neighbourhoods, real kitchens, real interruptions, and the kind of detail a structured questionnaire never surfaces.",
+        media: {
+          images: [
+            {
+              src: "/work/maternal-health-research/field-1.jpg",
+              alt: "Street view of a clinic in the Pakistani neighbourhood where fieldwork took place.",
+              w: 675,
+              h: 900,
+            },
+            {
+              src: "/work/maternal-health-research/field-2.jpg",
+              alt: "Residential alley in the neighbourhood where in-home observations took place.",
+              w: 900,
+              h: 818,
+            },
+          ],
+          caption: "The neighbourhoods where interviews and in-home observations took place.",
+        },
+      },
+      {
+        heading: "Three women the product has to work for",
+        body: "Composite archetypes, built from the interviews. No real individuals are shown.",
+        personas: [
+          {
+            name: "The Over-Burdened Labourer",
+            subtitle: "Keep functioning so the household doesn't fall apart.",
+            quote:
+              "I force myself to take my supplements so my health doesn't fail, but the workload and the money make it hard.",
+            pains: [
+              "A meagre income makes food and medicine a luxury.",
+              "Labour doesn't stop for fainting spells or pain.",
+              "Deep anxiety from a traumatic obstetric history.",
+            ],
+            gains: [
+              "Anything that lets her keep doing her work.",
+              "Nominal-cost clinic meds that feel manageable.",
+              "Reassurance the baby will be born healthy.",
+            ],
+            image: "/work/maternal-health-research/persona-labourer.jpg",
+            imageAlt: "Representative portrait for the Over-Burdened Labourer persona.",
+            w: 500,
+            h: 399,
+          },
+          {
+            name: "The Influenced Skeptic",
+            subtitle: "Avoid complications and harsh pain.",
+            quote:
+              "I'm scared of medicines, so I try to keep my diet healthy, but it's hard to afford meat and fruit.",
+            pains: [
+              "Belief that supplements make the baby “too large.”",
+              "Stops the moment she feels any side effect.",
+              "Decisions sit with a mother-in-law, not her.",
+            ],
+            gains: [
+              "Natural substitutes she trusts, like milk or lemon water.",
+              "Formats that feel like a drink, not a “scary pill.”",
+              "Rest, when an elder is supportive.",
+            ],
+            image: "/work/maternal-health-research/persona-skeptic.jpg",
+            imageAlt: "Representative portrait for the Influenced Skeptic persona.",
+            w: 500,
+            h: 328,
+          },
+          {
+            name: "The Anxious First-Time Learner",
+            subtitle: "Get through a first pregnancy safely.",
+            quote:
+              "I try to follow medical advice so I know things are going well, but money and the walk to the clinic are hard.",
+            pains: [
+              "Can't swallow large pills; iron smell triggers nausea.",
+              "High fear of loss and of a traumatic delivery.",
+              "Too shy to ask the doctor direct questions.",
+            ],
+            gains: [
+              "An elder who manages her schedule and explains things.",
+              "Strong motivation to protect the baby's development.",
+              "Family involvement that lets her rest.",
+            ],
+            image: "/work/maternal-health-research/persona-learner.jpg",
+            imageAlt: "Representative portrait for the Anxious First-Time Learner persona.",
+            w: 500,
+            h: 382,
+          },
+        ],
+      },
+      {
+        heading: "Where a dose has to fit",
+        body: "For an experienced mother, health is managed reactively, around labour that never pauses. Mapping a real day showed the few narrow windows where a supplement could realistically land: only two or three in a fourteen-hour day, and most depend on someone else remembering, or on a supply she may not have.",
+        items: [
+          "6:00, Fajr: wakes for prayer, severe morning sickness. No dose.",
+          "7:00, Breakfast: cooks for the children; may take folic acid or iron after eating, if she remembers and owns it.",
+          "9:30, Chores: washing, sweeping, numbness, shortness of breath. No dose.",
+          "2:00, Rest: a short moment to herself before the children return. No dose.",
+          "4:00, Clinic: walks 20–30 minutes in heat for an IV drip; collects 3–5 days of supplements.",
+          "9:30, Night: in-laws “keep the pill in her hand” as a reminder; iron or folic acid, prompted by family.",
+        ],
+      },
+      {
+        heading: "The path from symptom to dose, or not",
+        body: "For irregular users, supplement decisions are reactive. Mapping the path showed where the product loses them: at the doubts, and at the moment the free supply runs out.",
+        items: [
+          "Triggers: full exhaustion or weakness, a test showing low iron, a doctor's warning about the baby.",
+          "Doubts: cultural belief the baby will be harmed, side effects like heartburn and body heat, and “when it runs out, who pays for the next?”",
+          "Options weighed: home remedies like dates, fruit, and milk; short-term relief like an IV drip; free clinic meds such as folic acid and Calc-C.",
+          "Decision: choose immediate relief over a long course, lean on self-knowledge and what's free, and weigh it all against cost and a doctor's word.",
+        ],
+      },
+      {
+        heading: "Design recommendations",
+        items: [
+          "Make it feel like a drink, not a drug: the effervescent sachet was loved because it felt like juice, not medicine; skeptical women accepted it where they refused pills.",
+          "Design for colour, not names: women recognise “the small yellow tablet” and “the black one,” never brands. Colour and shape carry recognition and recall.",
+          "Treat price as a feature: the ~150 Rs folic acid was “one of the few they can afford.” Cost is the adherence gate, not an afterthought.",
+          "Anchor to a ritual: doses tied to breakfast or sleep stuck; stored out of sight meant forgotten, so visible storage matters as much as the pill.",
+          "Shrink the pill, or pour it: large capsules caused real fear of swallowing; smaller forms and syrups kept women on a course they'd otherwise abandon.",
+          "Win the household, not just the woman: awareness was entirely family-driven. If a sister or mother-in-law hadn't heard of it, she never started. Endorsement is the activation lever.",
+        ],
+      },
+    ],
+    image: "/work/maternal-health-research.jpg",
+    imageAlt: "Prenatal supplements, including folic acid and calcium lactate, on a pharmacy shelf during field research in Pakistan.",
+    coverAnimation: "/work/maternal-health-research/cover.json",
+    accent: "#cf3d73",
+  },
+  {
+    slug: "climate-finance-accelerator",
+    index: "06",
     title: "Climate Finance Accelerator Launch",
     client: "CFA Pakistan (under NDA) × DAI, with PwC & UK Government (FCDO)",
     tagline: "Coordinating government, investors, and businesses behind a national climate finance launch.",
@@ -658,8 +1110,81 @@ export const caseStudies: CaseStudy[] = [
       "Delivered as Communications Lead on CFA Pakistan, a UK Government (FCDO) programme implemented by DAI. Campaign materials shown are public. The strategic communications plan is confidential and is described here, not reproduced.",
   },
   {
+    slug: "impetus",
+    index: "07",
+    title: "Impetus Advisory Group Website",
+    client: "Impetus Advisory Group",
+    tagline: "A Webflow site for a 38-person advisory group, built to hold four practice areas and a full staff directory as one coherent firm.",
+    year: "2024",
+    sector: "Management Consulting",
+    role: "Web Design & Development",
+    type: "Web design & Webflow development",
+    summary:
+      "Impetus Advisory Group runs consulting work across healthcare, change management, finance and economy, and public commentary, with a team of 38 spread across those practices. The site needed to hold all of it — a real Insights blog, a full People directory, a separate culture page, and a careers form — without reading as four disconnected mini-sites bolted together.",
+    problem:
+      "A firm that splits cleanly into practice areas risks a homepage that either flattens every specialty into one generic pitch, or forces a visitor to pick a lane before they've seen anything. And a team of 38 people needs a directory that scales past a hand-built grid of a dozen cards.",
+    approach: [
+      "Built the homepage hero as a CMS-driven switch: selecting a practice area (Healthcare, Change Management, Finance & Economy, Podcast & Opinions) swaps the headline and the Insights articles pulled beneath it, so one hero serves four different audiences.",
+      "Modeled People as a single Webflow CMS collection powering all 38 staff profiles — photo, title, short bio — rendered as one directory grid instead of hand-built sections per department.",
+      "Kept Life at Impetus and Careers as their own lightweight pages, an Instagram-fed culture blog and a short lead-capture form, so tone can shift from advisory-firm formal to workplace-casual without touching the rest of the system.",
+    ],
+    outcome:
+      "A single Webflow build that holds four practice areas, a real Insights CMS, and a 38-person directory without feeling like four sites stitched together — each section reads as its own space while sharing one visual system.",
+    metrics: [
+      { label: "Practice areas", value: "4" },
+      { label: "Team profiles", value: "38" },
+      { label: "Core site sections", value: "4" },
+    ],
+    tools: "Webflow",
+    sections: [
+      {
+        heading: "A hero that reframes itself by practice area",
+        body: "Rather than one static headline, the homepage hero is wired to the site's four practice-area tabs. Selecting one swaps the headline copy and the three Insights articles surfaced underneath — so a healthcare client and a finance client land on what reads like two different, specific homepages built just for them.",
+        media: {
+          images: [
+            {
+              src: "/work/impetus/ui-homepage.png",
+              alt: "The Impetus Advisory Group homepage with Finance & Economy selected, showing the headline and three matching Insights articles.",
+              w: 3040,
+              h: 1622,
+              full: true,
+            },
+          ],
+          caption: "Selecting a practice area swaps the headline and the three articles beneath it — one component, four homepages.",
+        },
+      },
+      {
+        heading: "Same system, two different tones",
+        body: "Podcast & Opinions swaps the article cards for an embedded YouTube playlist instead. Life at Impetus goes further, replacing the whole page with a culture-forward video hero — both running on the same nav and layout as the advisory-facing homepage.",
+        media: {
+          images: [
+            {
+              src: "/work/impetus/ui-podcast.png",
+              alt: "The Podcast & Opinions tab, showing an embedded YouTube playlist in place of article cards.",
+              label: "Podcast & Opinions",
+              w: 3040,
+              h: 1618,
+            },
+            {
+              src: "/work/impetus/ui-life-at-impetus.png",
+              alt: "The Life at Impetus page, with a full-bleed video hero reading 'Empathy, Excellence, Empowerment.'",
+              label: "Life at Impetus",
+              w: 3040,
+              h: 1620,
+            },
+          ],
+          caption: "Same nav, same wordmark, same footer — a noticeably different register for a noticeably different audience.",
+        },
+      },
+    ],
+    image: "/work/impetus/ui-homepage.png",
+    imageAlt: "The Impetus Advisory Group homepage with Finance & Economy selected, showing the headline and three matching Insights articles.",
+    coverVideo: "/work/impetus/cover.mp4",
+    accent: "#7a3226",
+  },
+  {
     slug: "what-she-carried",
-    index: "04",
+    index: "08",
     title: "What She Carried",
     client: "NYU ITP · Thesis",
     tagline: "A VR archive of memory and migration, built from the objects that crossed a border in 1947.",
@@ -705,7 +1230,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "biofutures",
-    index: "05",
+    index: "09",
     title: "Biofutures: Design Thinking for the Planet and Beyond",
     client: "Ideate Innovation × Precision Medicine Lab",
     tagline:
@@ -897,531 +1422,6 @@ export const caseStudies: CaseStudy[] = [
     coverVideo: "/work/biofutures/cover.mp4",
     accent: "#0e94a0",
   },
-  {
-    slug: "maternal-health-research",
-    index: "06",
-    title: "Maternal Health Supplement Research",
-    client: "Global Health Foundation (under NDA) × Ideate Innovation",
-    tagline:
-      "Qualitative research into why low-income pregnant women in Pakistan start, skip, or stop prenatal supplements, and what it means for the products meant to help them.",
-    year: "2026",
-    sector: "Healthcare / Research",
-    role: "UI/UX Design Lead & Researcher",
-    type: "Qualitative research · Synthesis · Personas & journeys",
-    tools: "FGDs, interviews, home observation",
-    confidentialityNote:
-      "Delivered through Ideate Innovation for a global health foundation under NDA. The end client and research partner are not named. All participant data is anonymised: no real names, ages, photographs, or identifying details are shown, in line with the study's confidentiality terms. Personas are composite archetypes drawn from aggregated findings.",
-    summary:
-      "A qualitative research project examining why low-income pregnant women in Pakistan start, skip, or stop taking prenatal supplements. This is the Pakistan arm of a wider multi-country study, commissioned by a global health foundation (anonymised under NDA) through Ideate Innovation.",
-    problem:
-      "The easy assumption is that women miss doses because they forget. The research found something harder: a missed dose is usually a rational response to a real constraint: the clinic gave three days' supply and the next dose costs money the household doesn't have, the iron tablet causes a burning that taking it with milk only hides, an elder believes the pills will make the baby too large, or there is simply no energy left after a day of labour. So the question for the product wasn't how to remind women. It was how to fit a supplement into lives defined by financial strain, medical fear, and family decision-making, so that taking it stops being a thing to decide.",
-    pullQuote:
-      "When there is more trouble, one feels like taking medicine. But when there is no reach, then I leave it.",
-    pullQuoteAttribution: "Study participant, anonymised",
-    approach: [
-      "Went into homes, not surveys: 36 in-depth interviews with pregnant women, 4 co-creative focus groups, 10 influencer interviews (husbands, mothers-in-law, sisters), 10 community health worker interviews, and 10 in-home observations of real routines.",
-      "Mapped a real day to find where a dose could realistically land, then mapped the decision path for irregular users to find exactly where the product loses them.",
-    ],
-    outcome:
-      "The findings pointed at the product, not just the messaging. Six specific, research-grounded recommendations, covering format, recognition, price, ritual, pill size, and household activation, turned into a design brief a health foundation could act on directly, not a generic call for better reminders.",
-    metrics: [
-      { label: "Participants", value: "66+" },
-      { label: "Personas to design against", value: "3" },
-      { label: "Countries in wider study", value: "3" },
-    ],
-    sections: [
-      {
-        heading: "Grounded in research",
-        body: "The fieldwork happened in homes, not on survey forms: sitting with women through a routine day, not just asking about it. That meant real neighbourhoods, real kitchens, real interruptions, and the kind of detail a structured questionnaire never surfaces.",
-        media: {
-          images: [
-            {
-              src: "/work/maternal-health-research/field-1.jpg",
-              alt: "Street view of a clinic in the Pakistani neighbourhood where fieldwork took place.",
-              w: 675,
-              h: 900,
-            },
-            {
-              src: "/work/maternal-health-research/field-2.jpg",
-              alt: "Residential alley in the neighbourhood where in-home observations took place.",
-              w: 900,
-              h: 818,
-            },
-          ],
-          caption: "The neighbourhoods where interviews and in-home observations took place.",
-        },
-      },
-      {
-        heading: "Three women the product has to work for",
-        body: "Composite archetypes, built from the interviews. No real individuals are shown.",
-        personas: [
-          {
-            name: "The Over-Burdened Labourer",
-            subtitle: "Keep functioning so the household doesn't fall apart.",
-            quote:
-              "I force myself to take my supplements so my health doesn't fail, but the workload and the money make it hard.",
-            pains: [
-              "A meagre income makes food and medicine a luxury.",
-              "Labour doesn't stop for fainting spells or pain.",
-              "Deep anxiety from a traumatic obstetric history.",
-            ],
-            gains: [
-              "Anything that lets her keep doing her work.",
-              "Nominal-cost clinic meds that feel manageable.",
-              "Reassurance the baby will be born healthy.",
-            ],
-            image: "/work/maternal-health-research/persona-labourer.jpg",
-            imageAlt: "Representative portrait for the Over-Burdened Labourer persona.",
-            w: 500,
-            h: 399,
-          },
-          {
-            name: "The Influenced Skeptic",
-            subtitle: "Avoid complications and harsh pain.",
-            quote:
-              "I'm scared of medicines, so I try to keep my diet healthy, but it's hard to afford meat and fruit.",
-            pains: [
-              "Belief that supplements make the baby “too large.”",
-              "Stops the moment she feels any side effect.",
-              "Decisions sit with a mother-in-law, not her.",
-            ],
-            gains: [
-              "Natural substitutes she trusts, like milk or lemon water.",
-              "Formats that feel like a drink, not a “scary pill.”",
-              "Rest, when an elder is supportive.",
-            ],
-            image: "/work/maternal-health-research/persona-skeptic.jpg",
-            imageAlt: "Representative portrait for the Influenced Skeptic persona.",
-            w: 500,
-            h: 328,
-          },
-          {
-            name: "The Anxious First-Time Learner",
-            subtitle: "Get through a first pregnancy safely.",
-            quote:
-              "I try to follow medical advice so I know things are going well, but money and the walk to the clinic are hard.",
-            pains: [
-              "Can't swallow large pills; iron smell triggers nausea.",
-              "High fear of loss and of a traumatic delivery.",
-              "Too shy to ask the doctor direct questions.",
-            ],
-            gains: [
-              "An elder who manages her schedule and explains things.",
-              "Strong motivation to protect the baby's development.",
-              "Family involvement that lets her rest.",
-            ],
-            image: "/work/maternal-health-research/persona-learner.jpg",
-            imageAlt: "Representative portrait for the Anxious First-Time Learner persona.",
-            w: 500,
-            h: 382,
-          },
-        ],
-      },
-      {
-        heading: "Where a dose has to fit",
-        body: "For an experienced mother, health is managed reactively, around labour that never pauses. Mapping a real day showed the few narrow windows where a supplement could realistically land: only two or three in a fourteen-hour day, and most depend on someone else remembering, or on a supply she may not have.",
-        items: [
-          "6:00, Fajr: wakes for prayer, severe morning sickness. No dose.",
-          "7:00, Breakfast: cooks for the children; may take folic acid or iron after eating, if she remembers and owns it.",
-          "9:30, Chores: washing, sweeping, numbness, shortness of breath. No dose.",
-          "2:00, Rest: a short moment to herself before the children return. No dose.",
-          "4:00, Clinic: walks 20–30 minutes in heat for an IV drip; collects 3–5 days of supplements.",
-          "9:30, Night: in-laws “keep the pill in her hand” as a reminder; iron or folic acid, prompted by family.",
-        ],
-      },
-      {
-        heading: "The path from symptom to dose, or not",
-        body: "For irregular users, supplement decisions are reactive. Mapping the path showed where the product loses them: at the doubts, and at the moment the free supply runs out.",
-        items: [
-          "Triggers: full exhaustion or weakness, a test showing low iron, a doctor's warning about the baby.",
-          "Doubts: cultural belief the baby will be harmed, side effects like heartburn and body heat, and “when it runs out, who pays for the next?”",
-          "Options weighed: home remedies like dates, fruit, and milk; short-term relief like an IV drip; free clinic meds such as folic acid and Calc-C.",
-          "Decision: choose immediate relief over a long course, lean on self-knowledge and what's free, and weigh it all against cost and a doctor's word.",
-        ],
-      },
-      {
-        heading: "Design recommendations",
-        items: [
-          "Make it feel like a drink, not a drug: the effervescent sachet was loved because it felt like juice, not medicine; skeptical women accepted it where they refused pills.",
-          "Design for colour, not names: women recognise “the small yellow tablet” and “the black one,” never brands. Colour and shape carry recognition and recall.",
-          "Treat price as a feature: the ~150 Rs folic acid was “one of the few they can afford.” Cost is the adherence gate, not an afterthought.",
-          "Anchor to a ritual: doses tied to breakfast or sleep stuck; stored out of sight meant forgotten, so visible storage matters as much as the pill.",
-          "Shrink the pill, or pour it: large capsules caused real fear of swallowing; smaller forms and syrups kept women on a course they'd otherwise abandon.",
-          "Win the household, not just the woman: awareness was entirely family-driven. If a sister or mother-in-law hadn't heard of it, she never started. Endorsement is the activation lever.",
-        ],
-      },
-    ],
-    image: "/work/maternal-health-research.jpg",
-    imageAlt: "Prenatal supplements, including folic acid and calcium lactate, on a pharmacy shelf during field research in Pakistan.",
-    coverAnimation: "/work/maternal-health-research/cover.json",
-    accent: "#cf3d73",
-  },
-  {
-    slug: "max",
-    index: "07",
-    title: "Max: Gaming Community Platform",
-    client: "Gaming Engagement Platform (under NDA) × Ideate Innovation",
-    tagline: "A no-code page builder and AI-powered analytics platform helping gaming brands turn their Discord communities into interactive, rewarding experiences.",
-    year: "2025",
-    sector: "Gaming / Marketing Technology",
-    role: "Product Designer, equal collaboration with two other designers",
-    type: "SaaS platform design · Web app + analytics dashboard",
-    summary:
-      "Gaming brands build huge, active communities on Discord, but Discord itself gives them no ownable space to showcase a brand, run rewards, or actually see who their best fans are. This product lets a brand spin up a branded, interactive page connected to that community in minutes, then shows them what's happening inside it.",
-    problem:
-      "A brand's community already exists. What it doesn't have is a home: somewhere to bring a 3D item drop, a live chat, a poll, and a rewards balance together under its own look and feel, without engineering effort. And once that page exists, the brand still can't answer a basic question: which fans actually matter, and what should we do for them next?",
-    pullQuote: "This product gives a gaming brand's existing community a place built to reward it.",
-    approach: [
-      "Mapped the flow end to end: connect a Discord server, brand a page in minutes, build it from templates or from scratch, then read what the audience does on it.",
-      "Designed a widget-based creation system (3D interaction, live chat, polls, rewards) that reskins cleanly across light and dark, so one page structure works for very different brand identities.",
-      "Built the analytics layer, MAX Core, around AI-generated insight and segment-level recommendations, not just charts.",
-    ],
-    outcome:
-      "A complete, validated concept spanning onboarding, page creation, and analytics, handed off as a documented Figma system. The client paused the initiative before build, so this reflects the design work as delivered, not a shipped product.",
-    metrics: [
-      { label: "Core surfaces designed", value: "3" },
-      { label: "Page templates shipped", value: "3" },
-      { label: "Designers, equal collaboration", value: "3" },
-    ],
-    tools: "Figma",
-    confidentialityNote:
-      "Delivered through Ideate Innovation; the commissioning client is anonymised under NDA and the initiative was paused before launch. Brand content shown (e.g. Valorant) is illustrative example content used during design, not a confirmed partner. Designed in equal collaboration with two other Ideate designers.",
-    locked: true,
-    sections: [
-      {
-        heading: "One page, built for the community",
-        body: "The pitch was simple to say and hard to deliver: give a brand a single page that pulls its community's favourite things (a chat, a poll, a reward) into one place, styled like the brand and not like a template. The landing experience had to sell that in one scroll, to a marketing lead who has never used a page builder before.",
-        media: {
-          images: [
-            {
-              src: "/work/max/landing.jpg",
-              alt: "Max marketing landing page: 'Engage with your audience', with audience insight cards and a mascot character.",
-              w: 1800,
-              h: 1125,
-            },
-          ],
-          caption: "The pitch, in one scroll: audience insight, community rewards, and a branded mascot doing the explaining.",
-        },
-      },
-      {
-        heading: "Branding a page in minutes",
-        body: "Setup asks for exactly what's needed to make a page feel like the brand's own: a project name, the Discord server and channel it lives inside, a logo, an accent colour, a theme, a font. Nothing here is a Max concept the user has to learn first.",
-        media: {
-          images: [
-            {
-              src: "/work/max/onboarding-branding.jpg",
-              alt: "Welcome to Max onboarding screen: project name, Discord server selection, logo upload, accent colour, theme, and font.",
-              w: 1800,
-              h: 1125,
-            },
-          ],
-          caption: "Setup speaks the brand's language first: Discord server, logo, accent colour, font.",
-        },
-      },
-      {
-        heading: "Templates that fit the moment",
-        body: "Not every brand needs the same page. A single-drop launch wants one hero moment; a brand running several rewards at once wants them all visible; a brand mostly broadcasting news wants a feed. Three starting layouts cover those cases, each named for the job it does rather than for what it looks like.",
-        items: [
-          "Center-Stage: for highlighting a single brand experience.",
-          "Bento: for showcasing multiple rewards and interactions.",
-          "Notice-board: for listing broadcasts and announcements.",
-        ],
-        media: {
-          images: [
-            {
-              src: "/work/max/template-picker.jpg",
-              alt: "Template picker showing three starting layouts: Center-Stage, Bento, and Notice-board.",
-              w: 1800,
-              h: 1125,
-            },
-          ],
-          caption: "Three layouts, each named for the job it does, not the shape it makes.",
-        },
-      },
-      {
-        heading: "A builder that reskins itself",
-        body: "The creation surface is a widget canvas: 3D object interaction, live chat backed by an AI assistant, a player profile, polls, rewards, all dropped onto a page and restyled with a background and accent colour. The same widget set had to hold up equally well against a soft pastel background and a full-bleed, in-universe game illustration, since brands would want both.",
-        media: {
-          images: [
-            {
-              src: "/work/max/editor-light.jpg",
-              alt: "Max Creation editor in a light pink theme, showing 3D interaction, live chat, and poll widgets for a Valorant page.",
-              label: "Light theme",
-              w: 1800,
-              h: 1125,
-            },
-            {
-              src: "/work/max/editor-dark.jpg",
-              alt: "The same Max Creation editor restyled with a dramatic dark, full-bleed game illustration background.",
-              label: "Dark theme",
-              w: 1800,
-              h: 1125,
-            },
-          ],
-          caption: "Same widgets, same layout logic, two completely different brand moods.",
-        },
-      },
-      {
-        heading: "Campaign controls that stay out of the way",
-        body: "Publishing a page isn't a single action, it's a set of decisions a brand needs to keep making: is this campaign live or still a draft, is there a player limit, what happens in each integration. Those controls sit in their own tabbed settings panel rather than crowding the creative canvas.",
-        media: {
-          images: [
-            {
-              src: "/work/max/campaign-settings.jpg",
-              alt: "Campaign Settings panel with tabs for Campaign Settings, Theme & Branding, Content, Integrations, Advanced, and Publishing, plus a Draft/Live toggle.",
-              w: 1800,
-              h: 1125,
-            },
-          ],
-          caption: "Draft and Live sit side by side as an explicit choice, not a hidden publish state.",
-        },
-      },
-      {
-        heading: "Turning community data into direction",
-        body: "MAX Core is the half of the product that answers 'so what do we do now?' Every metric is paired with a plain-language read of it, and every audience segment comes with a suggested next action rather than a raw number.",
-        items: [
-          "Total audience, active-this-week, session time, and retention, each with an AI-confidence score attached.",
-          "A MAX Recommendation surfaced directly under the headline number: which segment to act on, and why.",
-          "Four audience segments (Top Fans, Frequent Claimers, Dormant Players, Influencers), each with its own engagement, growth, and a one-click action.",
-        ],
-        media: {
-          images: [
-            {
-              src: "/work/max/analytics-dashboard.jpg",
-              alt: "MAX Core analytics dashboard: total audience, AI insight and recommendation, and four audience segments (Top Fans, Frequent Claimers, Dormant Players, Influencers).",
-              w: 1183,
-              h: 1800,
-            },
-          ],
-          sideBySide: true,
-          caption: "MAX Core: Audience Overview, with an AI recommendation surfaced above the segments themselves.",
-        },
-      },
-    ],
-    image: "/work/max/hero-creation-dark.jpg",
-    imageAlt: "The Max Creation editor restyled with a dark, full-bleed game illustration background, showing live chat, 3D interaction, and player profile widgets.",
-    coverAnimation: "/work/max/cover.json",
-    coverVideo: "/work/max/cover.mp4",
-    accent: "#f2542d",
-  },
-  {
-    slug: "flyve",
-    index: "08",
-    title: "Flyve: Running for Everyone",
-    client: "Flyve LLC",
-    tagline: "A community platform connecting runners of every experience level across New York City.",
-    year: "2023",
-    sector: "Social Fitness / Community",
-    role: "UI/UX Designer",
-    type: "Research, UX design & high-fidelity UI",
-    summary:
-      "Flyve's founders had a running community already forming offline, on trails and in group chats, but no shared platform to bring it together. My job was to research that community and design the app that could hold it.",
-    problem:
-      "Beginner runners found existing running clubs intimidating, and experienced runners training for a race wanted a real running partner, not just a tracking app. The platform had to work for both: a low-pressure way in for newcomers, and a way to actually find someone to train with for people already keeping a schedule.",
-    pullQuote: "Beginner runners are intimidated by running clubs and communities. People just want a buddy to run with.",
-    approach: [
-      "Ran a competitive teardown of TennisPal, BuddyUp, and Strava before designing anything, to see which parts of \"social fitness app\" were already solved and which were the actual gap.",
-      "Mapped the full product as a flowchart first (home, calendar, community, messenger, profile) so matching, events, and messaging shared one navigation model instead of three bolted-on features.",
-      "Took the onboarding, matching, and events flows to high fidelity in Figma, on a design system built around Halyard Micro and Inter.",
-    ],
-    outcome:
-      "A complete, high-fidelity prototype covering onboarding, runner-matching, and events, handed off with a documented design system so the founders could brief development directly from Figma.",
-    tools: "Figma",
-    sections: [
-      {
-        heading: "What Strava and running clubs don't do",
-        body: "Before designing anything, I audited the apps runners were already using. TennisPal let people find courts but wasn't built for pace or schedule matching. BuddyUp's flow felt more like a dating app than a running one. Strava synced everyone's data but stayed user-based, not community-based, so it never actually got two runners into the same park at the same time.",
-        items: [
-          "TennisPal: court-finding works, but sliders and matching are an afterthought.",
-          "BuddyUp: quick login, syncs with Strava, but the flow reads as dating, not running.",
-          "Strava: great feedback loop per user, but nothing pushes two runners toward the same run.",
-        ],
-      },
-      {
-        heading: "What runners actually told us",
-        body: "User research turned up a consistent split: beginners were put off by the idea of a \"running club,\" while more serious runners wanted a specific kind of help, someone at their pace, for a specific goal like a marathon.",
-        items: [
-          "It's difficult to schedule a run even with runners you already know.",
-          "People want running buddies to run with, not just a tracking app.",
-          "Running is a good way to meet new people, if the app doesn't feel like a chore.",
-          "A chat option that hides stats keeps the app from feeling like a numbers contest.",
-          "Runners want to filter by pace, since a mismatched pace ruins a run fast.",
-          "People training for marathons specifically want a partner, not just company.",
-        ],
-      },
-      {
-        heading: "Matching, without the dating-app feel",
-        body: "The core loop is a filtered search: pick a location, a time window, a pace range, and a distance, and Flyve returns runners nearby who fit. Results show exactly why someone's a match, their usual parks, their availability, what they're training for, so a message isn't a cold open.",
-        media: {
-          images: [
-            {
-              src: "/work/flyve/ui-home-search.png",
-              alt: "Flyve's map view for finding runners near Central Park, with filters for availability, gender, distance, preferred speed, and running clubs.",
-              w: 1316,
-              h: 2674,
-            },
-            {
-              src: "/work/flyve/ui-home-filters.png",
-              alt: "The 'where would you like to meet runners' filter sheet, with location, time, pace range, and distance controls.",
-              w: 1316,
-              h: 2674,
-            },
-            {
-              src: "/work/flyve/ui-home-matches.png",
-              alt: "Filtered results showing three matched runners near Central Park with their availability and training goals, each with a Message button.",
-              w: 1316,
-              h: 2674,
-            },
-          ],
-          caption: "Filter by pace, time, and distance, then see exactly why each result matched before you message them.",
-        },
-      },
-      {
-        heading: "An onboarding that asks what actually matters",
-        body: "Onboarding collects only what changes the matching: name, age range (kept private by default), and a self-rated level from beginner to advanced. No stats to fill in before you've even gone for a run.",
-        media: {
-          images: [
-            {
-              src: "/work/flyve/ui-onboarding-welcome.png",
-              alt: "Welcome screen illustration of a runner mid-stride, with the line 'Join us now and meet the running community!'",
-              w: 1316,
-              h: 2674,
-            },
-            {
-              src: "/work/flyve/ui-onboarding-name.png",
-              alt: "Onboarding step 1 of 5, asking what to call the new user.",
-              w: 1316,
-              h: 2674,
-            },
-            {
-              src: "/work/flyve/ui-onboarding-age.png",
-              alt: "Onboarding step 3 of 5, asking for date of birth, kept private by default.",
-              w: 1316,
-              h: 2674,
-            },
-            {
-              src: "/work/flyve/ui-onboarding-level.png",
-              alt: "Onboarding step 4 of 5, asking the user to self-rate as beginner, intermediate, or advanced.",
-              w: 1316,
-              h: 2674,
-            },
-          ],
-          caption: "Four steps, each one feeding the matching algorithm directly, nothing collected just to collect it.",
-        },
-      },
-      {
-        heading: "Events sit next to matching, not behind a separate app",
-        body: "Group runs needed the same home as one-on-one matching, so Events is a full calendar (public, private, and saved runs), not a bolted-on list. Opening a run shows the route, who's attending, and one clear action; creating one reuses the same guest- and location-picker patterns as the rest of the app.",
-        media: {
-          images: [
-            {
-              src: "/work/flyve/ui-events-calendar.png",
-              alt: "Events calendar filtered to Public, showing three upcoming Manhattan Wednesday Long Run listings for August 2023.",
-              w: 1316,
-              h: 2674,
-            },
-            {
-              src: "/work/flyve/ui-events-detail.png",
-              alt: "Manhattan Wednesday Run event detail, with route photo, pace/distance tags, attendee counts, and an Attend button.",
-              w: 1316,
-              h: 2674,
-            },
-            {
-              src: "/work/flyve/ui-events-add-guests.png",
-              alt: "Add guests sheet for inviting friends to an event by name, with select-all and per-person checkboxes.",
-              w: 1316,
-              h: 2674,
-            },
-            {
-              src: "/work/flyve/ui-events-add-location.png",
-              alt: "Add location sheet for pinpointing an event's meeting spot on a searchable map.",
-              w: 1316,
-              h: 2674,
-            },
-          ],
-          caption: "Same patterns as matching: search, pick, confirm. Creating an event never feels like a different app.",
-        },
-      },
-    ],
-    image: "/work/flyve/ui-home-matches.png",
-    imageAlt: "Flyve's runner-matching screen, showing filtered results near Central Park with each runner's availability and training goal.",
-    coverAnimation: "/work/flyve/cover.json",
-    coverVideo: "/work/flyve/cover.mp4",
-    accent: "#1f7a4d",
-  },
-  {
-    slug: "impetus",
-    index: "10",
-    title: "Impetus Advisory Group Website",
-    client: "Impetus Advisory Group",
-    tagline: "A Webflow site for a 38-person advisory group, built to hold four practice areas and a full staff directory as one coherent firm.",
-    year: "2024",
-    sector: "Management Consulting",
-    role: "Web Design & Development",
-    type: "Web design & Webflow development",
-    summary:
-      "Impetus Advisory Group runs consulting work across healthcare, change management, finance and economy, and public commentary, with a team of 38 spread across those practices. The site needed to hold all of it — a real Insights blog, a full People directory, a separate culture page, and a careers form — without reading as four disconnected mini-sites bolted together.",
-    problem:
-      "A firm that splits cleanly into practice areas risks a homepage that either flattens every specialty into one generic pitch, or forces a visitor to pick a lane before they've seen anything. And a team of 38 people needs a directory that scales past a hand-built grid of a dozen cards.",
-    approach: [
-      "Built the homepage hero as a CMS-driven switch: selecting a practice area (Healthcare, Change Management, Finance & Economy, Podcast & Opinions) swaps the headline and the Insights articles pulled beneath it, so one hero serves four different audiences.",
-      "Modeled People as a single Webflow CMS collection powering all 38 staff profiles — photo, title, short bio — rendered as one directory grid instead of hand-built sections per department.",
-      "Kept Life at Impetus and Careers as their own lightweight pages, an Instagram-fed culture blog and a short lead-capture form, so tone can shift from advisory-firm formal to workplace-casual without touching the rest of the system.",
-    ],
-    outcome:
-      "A single Webflow build that holds four practice areas, a real Insights CMS, and a 38-person directory without feeling like four sites stitched together — each section reads as its own space while sharing one visual system.",
-    metrics: [
-      { label: "Practice areas", value: "4" },
-      { label: "Team profiles", value: "38" },
-      { label: "Core site sections", value: "4" },
-    ],
-    tools: "Webflow",
-    sections: [
-      {
-        heading: "A hero that reframes itself by practice area",
-        body: "Rather than one static headline, the homepage hero is wired to the site's four practice-area tabs. Selecting one swaps the headline copy and the three Insights articles surfaced underneath — so a healthcare client and a finance client land on what reads like two different, specific homepages built just for them.",
-        media: {
-          images: [
-            {
-              src: "/work/impetus/ui-homepage.png",
-              alt: "The Impetus Advisory Group homepage with Finance & Economy selected, showing the headline and three matching Insights articles.",
-              w: 3040,
-              h: 1622,
-              full: true,
-            },
-          ],
-          caption: "Selecting a practice area swaps the headline and the three articles beneath it — one component, four homepages.",
-        },
-      },
-      {
-        heading: "Same system, two different tones",
-        body: "Podcast & Opinions swaps the article cards for an embedded YouTube playlist instead. Life at Impetus goes further, replacing the whole page with a culture-forward video hero — both running on the same nav and layout as the advisory-facing homepage.",
-        media: {
-          images: [
-            {
-              src: "/work/impetus/ui-podcast.png",
-              alt: "The Podcast & Opinions tab, showing an embedded YouTube playlist in place of article cards.",
-              label: "Podcast & Opinions",
-              w: 3040,
-              h: 1618,
-            },
-            {
-              src: "/work/impetus/ui-life-at-impetus.png",
-              alt: "The Life at Impetus page, with a full-bleed video hero reading 'Empathy, Excellence, Empowerment.'",
-              label: "Life at Impetus",
-              w: 3040,
-              h: 1620,
-            },
-          ],
-          caption: "Same nav, same wordmark, same footer — a noticeably different register for a noticeably different audience.",
-        },
-      },
-    ],
-    image: "/work/impetus/ui-homepage.png",
-    imageAlt: "The Impetus Advisory Group homepage with Finance & Economy selected, showing the headline and three matching Insights articles.",
-    coverVideo: "/work/impetus/cover.mp4",
-    accent: "#7a3226",
-  },
 ];
 
 // Clients & partners. Each maps to zero or more projects, revealed on hover
@@ -1512,7 +1512,7 @@ export const testimonials: {
     name: "Waleed Waseem",
     role: "Founder & CEO",
     company: "Productbox",
-    accent: "#d98324",
+    accent: "#9c5e1a",
     linkedin: "https://www.linkedin.com/in/waleed-waseem-2b625270/",
   },
   {
@@ -1522,7 +1522,7 @@ export const testimonials: {
     name: "Sarah Shulman",
     role: "Executive Producer",
     company: "Jack Morton",
-    accent: "#1f9d6b",
+    accent: "#187b54",
     linkedin: "https://www.linkedin.com/in/sarahshulman/",
   },
   {
@@ -1531,7 +1531,7 @@ export const testimonials: {
     highlight: "dedicated, professional and taking a hands-on approach",
     name: "Masna bin Umeed",
     role: "Product Design & Design Systems",
-    accent: "#cf3d73",
+    accent: "#c63168",
     linkedin: "https://www.linkedin.com/in/masnabinumeed/",
   },
 ];
@@ -1557,7 +1557,7 @@ export const services = [
 
 export const profile = {
   name: "Aliza Habib",
-  title: "Senior Product Designer & Communications Lead",
+  title: "Senior UI/UX Product Designer",
   tagline: "Shaping systems, services, and speculative futures.",
   /** Portrait shown on the About page sidebar. Falls back to a gradient panel when unset. */
   photo: undefined as string | undefined,
